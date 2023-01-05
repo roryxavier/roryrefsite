@@ -70,6 +70,7 @@
 		backdrop-filter: blur(1em);
 
 		transition: all 0.3s;
+		box-shadow: 0 0 1rem #44b4fc;
 
 		top: 0;
 		left: 0;
