@@ -1,4 +1,11 @@
 export default {
+  version: "0.0.1",
+  pageMetaData: {
+    copyWriteName: "Rory Xavier (RX)",
+    dateUpdated: "12 December",
+    yearUpdated: "2023",
+    commitHash: "463057b"
+  },
   navigationsLinks: [
     { title: "Home", isSelected: true, path: "/" },
     { title: "General", isSelected: false, path: "/general" },
@@ -28,5 +35,4 @@ export default {
       href: "https://www.furaffinity.net/user/roryxavier"
     }
   ]
-
 };
