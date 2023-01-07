@@ -4,6 +4,8 @@
 	import badge from '../../../assets/badge.webp';
 	import globalVars from '../../../vars/GlobalVars';
 
+	let furList = ['Rory Chris', 'Jimmy Fox'];
+
 	export let isScrollUp = false;
 
 	$: isScrollUp, onScroll();
@@ -31,9 +33,11 @@
 	};
 </script>
 
+<div class="fixed right-40 top-20 flex flex-col" />
+
 <nav class="Navigation" id="AppPage-Navigation" bind:this={Self}>
 	<div class="Navigation-body">
-		<img alt="Page Logo" class="Navigation-logo" src={badge} />
+		<img alt="Page Logo" class="Navigation-logo rounded-full" src={badge} />
 		<div class="Navigation-items">
 			{#each globalVars.navigationsLinks as navigation}
 				<button
@@ -48,6 +52,42 @@
 					}}>{navigation.title}</button
 				>
 			{/each}
+
+			<div
+				style="
+        overflow: visible;
+        padding-right: 12px;
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+        position: relative
+      "
+			>
+				<button
+					class=" Navigation-item Navigation-item-isDeselected"
+					style="
+            padding-right: 15px;
+            padding-left: 15px;
+          "
+					>Sona
+				</button>
+				<div
+					class="flex flex-col content-center fixed"
+					style="
+            width: max-content;
+            background-color: white;
+            padding: 0.5rem;
+            position: fixed;
+            margin-top: 7rem;
+            margin-left: -2rem;
+            border-radius: 0.2rem;
+          "
+				>
+					{#each furList as fur}
+						<i>{fur}</i>
+					{/each}
+				</div>
+			</div>
 		</div>
 	</div>
 </nav>
@@ -59,9 +99,9 @@
 
 		display: flex;
 		flex-direction: column;
+		flex-wrap: nowrap;
 		align-items: center;
 		justify-content: center;
-		flex-wrap: nowrap;
 
 		background: linear-gradient(90deg, #44b4fc, #4983e4);
 		background: hsla(0, 0%, 100%, 0.3);
@@ -77,10 +117,12 @@
 		width: 100%;
 		max-width: 100%;
 		border-radius: 0;
+		overflow-y: visible;
 	}
 
 	.Navigation-body {
 		width: 100%;
+		overflow-y: visible;
 		max-width: var(--max-content-width);
 		display: flex;
 		flex-direction: row;
@@ -88,19 +130,19 @@
 		justify-content: space-between;
 		flex-wrap: nowrap;
 	}
-
 	.Navigation-items {
 		width: max-content;
+		overflow-y: visible;
+		overflow-x: auto;
+
 		gap: 1rem;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-start;
 		flex-wrap: nowrap;
-		padding: 1.5rem 2rem 1.5rem 0.5rem;
 
-		overflow: hidden;
-		overflow-x: auto;
+		padding: 1.5rem 2rem 1.5rem 0.5rem;
 
 		--scrollbar-size: 0.3em;
 		--scrollbar-thumb-radius: 1rem;
@@ -137,9 +179,9 @@
 	}
 
 	.Navigation-logo {
-		height: 4rem;
+		height: 3rem;
 		margin: 1rem 0.5rem 1rem 1rem;
-		border-radius: 0.2rem;
+		/*border-radius: 0.2rem;*/
 	}
 
 	.Navigation-item {

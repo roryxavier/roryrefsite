@@ -1,6 +1,6 @@
 <script>
-	import badge from "../../assets/badge.webp";
-	import globalVars from "../../vars/GlobalVars";
+	import badge from '../../assets/badge.webp';
+	import globalVars from '../../vars/GlobalVars';
 
 	const referenceAvailability = {
 		sfw: true,
@@ -29,9 +29,9 @@
 			<li>
 				<a href={socialLink.href} target="_blank" rel="noopener noreferrer">
 					{#if typeof socialLink.icon === 'string' && socialLink.icon.trim().length}<img
-						src={socialLink.icon}
-						alt={`Icon ${socialLink.title}`}
-					/>{/if}<span>{socialLink.title}</span></a
+							src={socialLink.icon}
+							alt={`Icon ${socialLink.title}`}
+						/>{/if}<span>{socialLink.title}</span></a
 				>
 			</li>
 		{/each}
@@ -54,7 +54,7 @@
 				on:click={() => {
 					window.alert('🦊');
 				}}
-			>Download {referenceAvailability.nsfw ? 'SFW ' : ''}Refsheet (10 MB) ⬇️
+				>Download {referenceAvailability.nsfw ? 'SFW ' : ''}Refsheet (10 MB) ⬇️
 			</button>
 		</div>
 
@@ -66,7 +66,7 @@
 					on:click={() => {
 						window.alert('╰⋃╯🍆');
 					}}
-				>Download NSFW Refsheet (10.2 MB) ⬇️
+					>Download NSFW Refsheet (10.2 MB) ⬇️
 				</button>
 			</div>
 		{/if}
@@ -78,7 +78,7 @@
 			on:click={() => {
 				referenceAvailability.nsfw = !referenceAvailability.nsfw;
 			}}
-		>Toggle
+			>Toggle
 		</button>
 		😈
 	</div>
@@ -140,7 +140,7 @@
 	.Note {
 		background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
 		color: white;
-		border-left: 0.2em solid #224071;
+		borde\r-left: 0.2em solid #224071;
 		padding: 1rem;
 	}
 
