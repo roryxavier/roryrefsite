@@ -3,6 +3,9 @@
 	import '../../app.css';
 	import Footer from './comps/Footer.svelte';
 
+	/**
+	 * @type {NavBar | null}
+	 */
 	let navbar = null;
 </script>
 
@@ -13,7 +16,7 @@
 <div
 	class="AppPage"
 	on:scroll={(e) => {
-		navbar.isScrollUp = e.target.scrollTop > 4;
+		navbar.isScrollDown = e.target.scrollTop > 4;
 	}}
 >
 	<NavBar bind:this={navbar} />
@@ -50,6 +53,5 @@
 		overflow-y: auto;
 		height: 100vh;
 		width: 100vw;
-		/*padding-bottom: 10rem;*/
 	}
 </style>
