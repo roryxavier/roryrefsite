@@ -1,6 +1,8 @@
 <script>
 	import badge from '../../assets/badge.webp';
 	import globalVars from '../../vars/GlobalVars';
+	import ReferenceButton from './comps/Reference-Button.svelte';
+	import SfwToggle from './comps/SFW-Toggle.svelte';
 
 	const referenceAvailability = {
 		sfw: true,
@@ -47,52 +49,25 @@
 	<p>Just here to fetch the ref sheet?</p>
 
 	<div class="References">
-		<div class="Download-SFW">
-			<div class="Download-SFW-shadow" />
-			<button
-				class="Download-SFW-button"
-				on:click={() => {
-					window.alert('🦊');
-				}}
-				>Download {referenceAvailability.nsfw ? 'SFW ' : ''}Refsheet (10 MB) ⬇️
-			</button>
-		</div>
+		<ReferenceButton
+			title={referenceAvailability.nsfw
+				? 'Download SFW Refsheet (10 MB) ⬇️'
+				: 'Download Refsheet (10 MB) ⬇️'}
+			onClick={() => window.alert('🦊')}
+		/>
 
 		{#if referenceAvailability.nsfw}
-			<div class="Download-SFW">
-				<div class="Download-SFW-shadow" />
-				<button
-					class="Download-SFW-button"
-					on:click={() => {
-						window.alert('╰⋃╯🍆');
-					}}
-					>Download NSFW Refsheet (10.2 MB) ⬇️
-				</button>
-			</div>
+			<ReferenceButton
+				title={'Download NSFW Refsheet (10.2 MB) ⬇️'}
+				onClick={() => window.alert('╰⋃╯🍆')}
+			/>
 		{/if}
 	</div>
 
-	<div class="Reference-dirty-option">
-		😇
-		<button
-			on:click={() => {
-				referenceAvailability.nsfw = !referenceAvailability.nsfw;
-			}}
-			>Toggle
-		</button>
-		😈
-	</div>
+	<SfwToggle onClick={() => (referenceAvailability.nsfw = !referenceAvailability.nsfw)} />
 </main>
 
 <style>
-	.Reference-dirty-option {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		padding: 1rem;
-	}
-
 	.References {
 		display: flex;
 		flex-direction: column;
@@ -102,45 +77,10 @@
 		gap: 01rem;
 	}
 
-	.Download-SFW {
-		width: 100%;
-		position: relative;
-		display: flex;
-	}
-
-	.Download-SFW-button {
-		z-index: 2;
-		width: 100%;
-		background-color: #224071;
-		color: white;
-		padding: 1.5rem;
-		transition: all 0.2s;
-		border-radius: 0.5em;
-	}
-
-	.Download-SFW-button:hover {
-		transform: translateY(-0.2rem);
-	}
-
-	.Download-SFW-shadow {
-		z-index: 1;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		border-radius: 0.5em;
-		transform: translateY(0.5rem);
-
-		background-color: #162338;
-	}
-
 	.Note {
 		background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
 		color: white;
-		borde\r-left: 0.2em solid #224071;
+		border-left: 0.2em solid #224071;
 		padding: 1rem;
 	}
 
