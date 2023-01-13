@@ -1,21 +1,20 @@
 <svelte:options accessors />
 
 <script lang="ts">
+	import Fusonas from '../../../vars/Fursonas';
 	import badge from '../../../assets/badge.webp';
 	import globalVars from '../../../vars/GlobalVars';
 	import NavBarButton from './NavBar-Button.svelte';
+	import NavBarDropDown from './NavBar-DropDown.svelte';
 
-	const furList = ['Rory Chris', 'Jimmy Fox'];
+	const furList = Fusonas;
 
 	export let isScrollDown = false;
 </script>
 
-<nav
-	class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}"
-	id="AppPage-NavBar"
->
+<nav class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
 	<div class="NavBar-body">
-		<img class="NavBar-logo rounded-full" src={badge} alt="Page Logo" />
+		<img class="NavBar-logo" src={badge} alt="Page Logo" />
 		<div class="NavBar-items">
 			{#each globalVars.navigationsLinks as navigation}
 				<NavBarButton
@@ -28,14 +27,7 @@
 				/>
 			{/each}
 
-			<div class="NavBar-dropdown">
-				<NavBarButton title="Sona" onClick={() => console.log('hello world')} />
-				<div class="NavBar-dropdown-body">
-					{#each furList as fur}
-						<i>{fur}</i>
-					{/each}
-				</div>
-			</div>
+			<NavBarDropDown menus={furList} />
 		</div>
 	</div>
 </nav>
@@ -77,6 +69,7 @@
 			.NavBar-logo {
 				height: 3rem;
 				margin: 1rem 0.5rem 1rem 1rem;
+				border-radius: 50%;
 			}
 			.NavBar-items {
 				width: max-content;
@@ -99,9 +92,9 @@
 				--scrollbar-thumb-color-hover: hsla(0, 0%, 0%, 0.3);
 				--scrollbar-track-color: hsla(0, 0%, 0%, 0.05);
 				--scrollbar-track-color-hover: hsla(0, 0%, 0%, 0.05);
+
 				scrollbar-width: var(--scrollbar-size);
 				scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
-
 				&::-webkit-scrollbar {
 					height: var(--scrollbar-size);
 					width: var(--scrollbar-size);
@@ -118,33 +111,6 @@
 					background-color: var(--scrollbar-track-color);
 					&:hover {
 						background-color: var(--scrollbar-track-color-hover);
-					}
-				}
-
-				.NavBar-dropdown {
-					overflow: visible;
-					padding-right: 12px;
-					padding-left: 12px;
-					display: flex;
-					align-items: center;
-					position: relative;
-					.NavBar-dropdown-button {
-						padding-right: 15px;
-						padding-left: 15px;
-					}
-					.NavBar-dropdown-body {
-						display: flex;
-						flex-direction: column;
-						align-items: flex-start;
-						justify-content: center;
-
-						width: max-content;
-						background-color: white;
-						padding: 0.5rem;
-						position: fixed;
-						margin-top: 7rem;
-						margin-left: -2rem;
-						border-radius: 0.2rem;
 					}
 				}
 			}
