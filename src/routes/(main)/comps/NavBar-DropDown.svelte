@@ -5,15 +5,23 @@
 	import NavBarButton from './NavBar-Button.svelte';
 
 	export let menus: Fursona[] = [];
+
+	let isShowing = false;
 </script>
 
 <div class="NavBarDropDown">
-	<NavBarButton title="Fursona" onClick={() => console.log('hello world')} />
-	<div class="NavBarDropDown-body">
-		{#each menus as menu}
-			<i>{menu.name}</i>
-		{/each}
-	</div>
+	<NavBarButton
+		title="Fursona"
+		onClick={() => (isShowing = !isShowing)}
+		onBlur={() => (isShowing = false)}
+	/>
+	{#if isShowing}
+		<div class="NavBarDropDown-body">
+			{#each menus as menu}
+				<i>{menu.name}</i>
+			{/each}
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">

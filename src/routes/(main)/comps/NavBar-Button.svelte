@@ -4,12 +4,18 @@
 	export let isSelected = false;
 	export let title = '';
 	export let onClick = () => {};
+	export let onBlur = () => {};
+	export let onFocus = () => {};
 </script>
 
 <button
 	class="NavBarButton {isSelected ? 'NavBarButton-isSelected' : 'NavBarButton-isDeselected'}"
-	on:click={() => onClick()}>{title}</button
+	on:click={() => onClick()}
+	on:blur={() => onBlur()}
+	on:focus={() => onFocus()}
 >
+	{title}
+</button>
 
 <style lang="scss">
 	.NavBarButton {
