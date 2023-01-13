@@ -1,29 +1,34 @@
 <svelte:options accessors />
 
 <script lang="ts">
-	import Fusonas from '../../../vars/Fursonas';
-	import badge from '../../../assets/badge.webp';
-	import globalVars from '../../../vars/GlobalVars';
+	import { onDestroy, onMount } from 'svelte';
+	import Fusonas from '../vars/Fursonas';
+	import badge from '../assets/badge.webp';
+	import globalVars from '../vars/GlobalVars';
 	import NavBarButton from './NavBar-Button.svelte';
 	import NavBarDropDown from './NavBar-DropDown.svelte';
 
+	export let isScrollDown = false;
+
+	const { navigationsLinks } = globalVars;
+
 	const furList = Fusonas;
 
-	export let isScrollDown = false;
+	let pathname = '';
+	onMount(() => {
+		pathname = window.location.pathname;
+	});
 </script>
 
 <nav class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
 	<div class="NavBar-body">
 		<img class="NavBar-logo" src={badge} alt="Page Logo" />
 		<div class="NavBar-items">
-			{#each globalVars.navigationsLinks as navigation}
+			{#each navigationsLinks as navigation}
 				<NavBarButton
-					isSelected={navigation.isSelected}
+					isSelected={navigation.path === pathname}
 					title={navigation.title}
-					onClick={() => {
-						navigation.isSelected = true;
-						globalVars.navigationsLinks.forEach((nav) => (nav.isSelected = navigation === nav));
-					}}
+					href={navigation.path}
 				/>
 			{/each}
 

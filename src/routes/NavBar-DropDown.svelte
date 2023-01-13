@@ -1,8 +1,8 @@
 <svelte:options accessors />
 
 <script lang="ts">
-	import type Fursona from '../../../model/Fursona';
 	import NavBarButton from './NavBar-Button.svelte';
+	import type Fursona from '../model/Fursona';
 
 	export let menus: Fursona[] = [];
 
@@ -12,6 +12,7 @@
 <div class="NavBarDropDown">
 	<NavBarButton
 		title="Fursona"
+		isSelected={isShowing}
 		onClick={() => (isShowing = !isShowing)}
 		onBlur={() => (isShowing = false)}
 	/>
@@ -27,8 +28,6 @@
 <style lang="scss">
 	.NavBarDropDown {
 		overflow: visible;
-		padding-right: 12px;
-		padding-left: 12px;
 		display: flex;
 		align-items: center;
 		position: relative;

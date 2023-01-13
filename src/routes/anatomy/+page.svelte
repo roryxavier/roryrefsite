@@ -2,5 +2,5 @@
 </script>
 
 <div>
-	<span>test general</span>
+	<span>test anatomy</span>
 </div>

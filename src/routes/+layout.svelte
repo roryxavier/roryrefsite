@@ -1,7 +1,9 @@
 <script>
-	import NavBar from './comps/NavBar.svelte';
-	import '../../app.css';
-	import Footer from './comps/Footer.svelte';
+	// @ts-nocheck
+
+	import NavBar from './NavBar.svelte';
+	import Footer from './Footer.svelte';
+	import '../app.css';
 
 	/**
 	 * @type {NavBar}
@@ -20,11 +22,13 @@
 	}}
 >
 	<NavBar bind:this={navbar} />
-	<slot />
+	<div class="AppPage-container">
+		<slot />
+	</div>
 	<Footer />
 </div>
 
-<style lang="css">
+<style lang="scss">
 	body {
 		position: relative;
 	}
@@ -53,5 +57,8 @@
 		overflow-y: auto;
 		height: 100vh;
 		width: 100vw;
+	}
+	.AppPage-container {
+		flex-grow: 1;
 	}
 </style>

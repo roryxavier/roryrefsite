@@ -7,10 +7,10 @@ export default {
 		commitHash: '463057b'
 	},
 	navigationsLinks: [
-		{ title: 'Home', isSelected: true, path: '/' },
-		{ title: 'General', isSelected: false, path: '/general' },
-		{ title: 'Anatomy', isSelected: false, path: '/anatomy' },
-		{ title: 'Clothing', isSelected: false, path: '/clothing' }
+		{ title: 'Home', path: '/' },
+		{ title: 'General', path: '/general' },
+		{ title: 'Anatomy', path: '/anatomy' },
+		{ title: 'Clothing', path: '/clothing' }
 	],
 	socialLink: [
 		{
