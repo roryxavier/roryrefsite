@@ -4,9 +4,9 @@
 	import Footer from './comps/Footer.svelte';
 
 	/**
-	 * @type {NavBar | null}
+	 * @type {NavBar}
 	 */
-	let navbar = null;
+	let navbar;
 </script>
 
 <svelte:head>
