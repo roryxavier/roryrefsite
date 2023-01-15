@@ -2,7 +2,7 @@
 
 <script lang="ts">
 	import NavBarButton from './NavBar-Button.svelte';
-	import type Fursona from '../model/Fursona';
+	import type Fursona from '../../model/Fursona';
 
 	export let menus: Fursona[] = [];
 

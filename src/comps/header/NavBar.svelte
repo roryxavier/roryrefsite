@@ -2,9 +2,9 @@
 
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
-	import Fusonas from '../vars/Fursonas';
-	import badge from '../assets/badge.webp';
-	import globalVars from '../vars/GlobalVars';
+	import Fusonas from '../../vars/Fursonas';
+	import badge from '../../assets/badge.webp';
+	import globalVars from '../../vars/GlobalVars';
 	import NavBarButton from './NavBar-Button.svelte';
 	import NavBarDropDown from './NavBar-DropDown.svelte';
 

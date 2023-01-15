@@ -1,9 +1,9 @@
 <script>
 	import badge from '../../assets/badge.webp';
 	import globalVars from '../../vars/GlobalVars';
-	import ReferenceButton from './comps/Reference-Button.svelte';
-	import SfwToggle from './comps/SFW-Toggle.svelte';
-	import SocialButton from './comps/SocialButton.svelte';
+	import ReferenceButton from '../../comps/home/Reference-Button.svelte';
+	import SfwToggle from '../../comps/home/SFW-Toggle.svelte';
+	import SocialButton from '../../comps/home/SocialButton.svelte';
 
 	const referenceAvailability = {
 		sfw: true,
@@ -84,18 +84,22 @@
 				align-items: center;
 				padding: 2rem;
 				gap: 0.5rem;
+
 				img {
 					width: 10em;
 					border-radius: 0.8em;
 				}
+
 				p {
 					font-weight: 500;
 					font-size: 2rem;
 				}
 			}
+
 			p {
 				margin: 1rem 0;
 			}
+
 			.description {
 				margin-top: 8em;
 				margin-left: auto;
@@ -103,6 +107,7 @@
 				font-style: italic;
 				text-align: center;
 			}
+
 			.Page-Socials {
 				width: 10rem;
 				display: flex;
@@ -110,12 +115,14 @@
 				align-items: stretch;
 				gap: 0.6rem;
 			}
+
 			.Note {
 				background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
 				color: white;
 				border-left: 0.2em solid #224071;
 				padding: 1rem;
 			}
+
 			.References {
 				display: flex;
 				flex-direction: column;
