@@ -8,9 +8,9 @@ export default {
 	},
 	navigationsLinks: [
 		{ title: 'Home', path: '/' },
-		{ title: 'General', path: '/general' },
-		{ title: 'Anatomy', path: '/anatomy' },
-		{ title: 'Clothing', path: '/clothing' }
+		{ title: 'General', path: '/general/' },
+		{ title: 'Anatomy', path: '/anatomy/' },
+		{ title: 'Clothing', path: '/clothing/' }
 	],
 	socialLink: [
 		{

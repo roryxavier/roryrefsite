@@ -28,7 +28,31 @@
 	}
 
 	:root {
+		@media (max-width: 700px) {
+			font-size: 19px;
+		}
+		@media (max-width: 600px) {
+			font-size: 18px;
+		}
+		@media (max-width: 500px) {
+			font-size: 17px;
+		}
+		@media (max-width: 400px) {
+			font-size: 16px;
+		}
+		@media (max-width: 300px) {
+			font-size: 15px;
+		}
+		@media (max-width: 200px) {
+			font-size: 14px;
+		}
 		font-size: 20px;
+		@media (min-width: 1000px) {
+			font-size: 21px;
+		}
+		@media (min-width: 1200px) {
+			font-size: 22px;
+		}
 	}
 
 	.AppPage {

@@ -17,10 +17,10 @@
 	<main class="Page-body">
 		<header>
 			<img alt="Rory Badge" src={badge} />
-			<p class="text-3xl">Rory Chris</p>
+			<p class="text-3xl text-center">Rory Chris</p>
 		</header>
 
-		<p class="description">Character Reference Page</p>
+		<p class="Page-section-title italic text-center font-bold">Character Reference Page</p>
 
 		<p>Welcome to Rory's Ref Page</p>
 		<p>On this page your can learn all about Rory, your friendly neighborhood blue wolf!</p>
@@ -100,12 +100,8 @@
 				margin: 1rem 0;
 			}
 
-			.description {
-				margin-top: 8em;
-				margin-left: auto;
-				margin-right: auto;
-				font-style: italic;
-				text-align: center;
+			.Page-section-title {
+				margin-top: 2em;
 			}
 
 			.Page-Socials {
