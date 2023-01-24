@@ -15,21 +15,25 @@
 	<title>Rory Chris</title>
 
 	<main class="Page-body">
-		<header>
-			<img alt="Rory Badge" src={badge} />
-			<p class="text-3xl text-center">Rory Chris</p>
-		</header>
+		<div class="flex flex-row items-center" style="padding: 2rem">
+			<img alt="Rory Badge" src={badge} class="w-40 rounded-3xl" />
+			<div class="w-10" />
+			<div class="flex flex-col grow items-center">
+				<p class="font-bold text-4xl">Rory Chris</p>
+				<p>Character Information Page</p>
+			</div>
+		</div>
 
-		<p class="Page-section-title italic text-center font-bold">Character Reference Page</p>
-
-		<p>Welcome to Rory's Ref Page</p>
+		<p class="mb-5 font-bold text-1l">Welcome to Rory's Info Page</p>
 		<p>On this page your can learn all about Rory, your friendly neighborhood blue wolf!</p>
 		<p>
-			I started this page to have a single point of truth with all the info artists I commission can
-			possibly need. If you're missing some crucial info, or you would like to give me some general
-			feedback about this page, feel free to reach out!
+			I started this page to consolidate all my fursona in one single page, and cause why not it's
+			fun x3. And also i started this page to have single point of truth with all the info artist
+			commission can possibly need. Feel free to reach me out if need some general feedback about
+			this page.
 		</p>
 
+		<div class="mb-5" />
 		<ul class="Page-Socials">
 			{#each globalVars.socialLink as socialLink}
 				<li>
@@ -37,33 +41,24 @@
 				</li>
 			{/each}
 		</ul>
+		<div class="mb-5" />
 
 		<p class="Note">
 			<b>Note:</b> This page is still under heavy construction, as indicated by the 0.x.x version number
-			in the footer. I'm continously updating the site and adding details and information to it. In case
-			you run into something weird, definitely let me know!
+			in the footer. I'm continuously updating the site and adding details and information to it. In
+			case you run into something weird, definitely let me know!
 		</p>
-
+		<div class="mb-5" />
 		<h2>Complete Ref Sheet</h2>
 		<p>Just here to fetch the ref sheet?</p>
 
+		<div class="mb-5" />
 		<div class="References">
 			<ReferenceButton
-				title={referenceAvailability.nsfw
-					? 'Download SFW Refsheet (10 MB) ⬇️'
-					: 'Download Refsheet (10 MB) ⬇️'}
+				title="Download Refsheet (10 MB) ⬇ (NOT WORK)️"
 				onClick={() => window.alert('🦊')}
 			/>
-
-			{#if referenceAvailability.nsfw}
-				<ReferenceButton
-					title={'Download NSFW Refsheet (10.2 MB) ⬇️'}
-					onClick={() => window.alert('╰⋃╯🍆')}
-				/>
-			{/if}
 		</div>
-
-		<SfwToggle onClick={() => (referenceAvailability.nsfw = !referenceAvailability.nsfw)} />
 	</main>
 </div>
 
@@ -85,20 +80,20 @@
 				padding: 2rem;
 				gap: 0.5rem;
 
-				img {
-					width: 10em;
-					border-radius: 0.8em;
-				}
+				//img {
+				//	width: 10em;
+				//	border-radius: 0.8em;
+				//}
 
-				p {
-					font-weight: 500;
-					font-size: 2rem;
-				}
+				//p {
+				//	font-weight: 500;
+				//	font-size: 2rem;
+				//}
 			}
-
-			p {
-				margin: 1rem 0;
-			}
+			//
+			//p {
+			//	margin: 1rem 0;
+			//}
 
 			.Page-section-title {
 				margin-top: 2em;

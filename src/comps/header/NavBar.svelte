@@ -7,7 +7,6 @@
 	import globalVars from '../../vars/GlobalVars';
 	import NavBarButton from './NavBar-Button.svelte';
 	import NavBarDropDown from './NavBar-DropDown.svelte';
-
 	export let isScrollDown = false;
 
 	const { navigationsLinks } = globalVars;
@@ -22,7 +21,7 @@
 
 <nav class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
 	<div class="NavBar-body">
-		<img class="NavBar-logo" src={badge} alt="Page Logo" />
+		<a href="/"><img class="NavBar-logo" src={badge} alt="Page Logo" /></a>
 		<div class="NavBar-items">
 			{#each navigationsLinks as navigation}
 				<NavBarButton
