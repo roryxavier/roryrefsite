@@ -69,7 +69,7 @@
 				href={navigation.path}
 			/>
 		{/each}
-		<NavBarDropDown menus={furList} />
+		<!-- <NavBarDropDown menus={furList} /> -->
 	</div>
 </nav>
 
