@@ -31,7 +31,7 @@
 				/>
 			{/each}
 
-			<NavBarDropDown menus={furList} />
+			<!--			<NavBarDropDown menus={furList} />-->
 		</div>
 	</div>
 </nav>
