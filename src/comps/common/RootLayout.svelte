@@ -1,4 +1,5 @@
 <script>
+	import Ribbon from './Ribbon.svelte';
 	import NavBar from '../header/NavBar.svelte';
 	import Footer from '../footer/Footer.svelte';
 
@@ -15,9 +16,8 @@
 		navbar.isScrollDown = e.target.scrollTop > 4;
 	}}
 >
-	<div class="Ribbon">
-		<span>WIP</span>
-	</div>
+	<Ribbon />
+
 	<NavBar bind:this={navbar} />
 	<div class="AppPage-container">
 		<slot />
@@ -26,43 +26,6 @@
 </div>
 
 <style lang="scss">
-	.Ribbon {
-		--length: 200px;
-		--thickness: 1.5em;
-		--x: 0px;
-		--y: -20px;
-
-		font-size: 0.8rem;
-
-		width: var(--length);
-		height: var(--length);
-		text-align: center;
-		display: flex;
-		padding: 0 var(--padding-horizontal);
-		pointer-events: none;
-
-		z-index: 1;
-		position: fixed;
-		top: 0;
-		right: 0;
-		transform: rotate(45deg);
-
-		& > * {
-			width: var(--length);
-			height: var(--thickness);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: #f14335;
-			color: white;
-			transform: translateX(var(--x)) translateY(var(--y));
-		}
-	}
-
-	body {
-		position: relative;
-	}
-
 	:root {
 		@media (max-width: 700px) {
 			font-size: 19px;
@@ -90,6 +53,9 @@
 			font-size: 22px;
 		}
 	}
+	body {
+		position: relative;
+	}
 
 	.AppPage {
 		font-family: Dosis, sans-serif;
@@ -112,8 +78,8 @@
 		height: 100vh;
 		width: 100vw;
 	}
-
 	.AppPage-container {
+		z-index: 1;
 		flex-grow: 1;
 	}
 </style>
