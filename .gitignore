@@ -28,3 +28,4 @@ vite.config.ts.timestamp-*
 *.njsproj
 *.sln
 *.sw?
+/pnpm-lock.yaml
