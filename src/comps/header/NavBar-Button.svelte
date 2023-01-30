@@ -4,7 +4,7 @@
 	export let isSelected = false;
 	export let title = '';
 	export let href = '';
-	export let target = '_self';
+	export let target = '';
 	export let onClick = () => {};
 	export let onBlur = () => {};
 	export let onFocus = () => {};

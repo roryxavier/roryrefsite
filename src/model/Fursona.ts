@@ -26,7 +26,7 @@ export default class Fursona {
 		return this._icon;
 	}
 
-	get generalBioTableKVPair(): KVPair[] {
+	get generalProperties(): KVPair[] {
 		return this._generalBioTableKVPair;
 	}
 }

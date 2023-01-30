@@ -1,44 +1,40 @@
 <script>
 	// import UnderConstruction from '../../../comps/UnderConstruction.svelte';
 	import ResponsiveContainer from '../../../comps/common/ResponsiveContainer.svelte';
-	import fo from '../../../vars/Fursonas';
+	import Fursonas from '../../../vars/Fursonas';
 	import CompCard from '../../../comps/common/CompCard.svelte';
+	import TableTitle from './Table-Title.svelte';
+	import TableRow from './Table-Row.svelte';
 
-	const furInfo = fo[0];
+	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
 
 	// Test if it last element
-	let last = (a, i) => i === a.length - 1;
+	let isLast = (a, index) => index === a.length - 1;
 </script>
 
 <main>
 	<ResponsiveContainer>
-		<h1 class="text-4xl mb-8">General</h1>
-		<div class="h-0.5" />
-		<table class="w-full table-fixed">
-			<thead>
-				<th class="border-t-2 border-b-2 border-indigo-500">Key</th>
-				<th class="border-t-2 border-b-2 border-indigo-500">Value</th>
-			</thead>
-			<tbody>
-				{#each furInfo.generalBioTableKVPair as data, i}
-					<tr>
-						{#if last(furInfo.generalBioTableKVPair, i)}
-							<td class="text-right pr-5 pb-2 text-base border-b-2 border-b-2 border-indigo-500"
-								>{data.key} {i}</td
-							>
-							<td class="text-left pl-5 pb-2 text-base border-b-2 border-b-2 border-indigo-500"
-								>{data.value}</td
-							>
-						{:else}
-							<td class="text-right pr-5 pb-2 text-base">{data.key} {i}</td>
-							<td class="text-left pl-5 pb-2 text-base">{data.value}</td>
-						{/if}
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-		<h1 class="text-4xl mb-8  mt-8">Personality</h1>
+		<div class="Section">
+			{#if roryInfo}
+				<TableTitle title="General" />
+				<table class="w-full table-fixed" style="border-bottom: 1px solid indigo">
+					<TableRow key="Key" value="Value" isTitle={true} />
+					{#each roryInfo.generalProperties as property}
+						<TableRow key={property.key} value={property.value} />
+					{/each}
+				</table>
+			{/if}
+		</div>
 
-		<CompCard />
+		<!-- <div class="Section">
+			<TableTitle title="Personality" />
+			<CompCard />
+		</div> -->
 	</ResponsiveContainer>
 </main>
+
+<style lang="scss">
+	.Section {
+		margin-bottom: 2rem;
+	}
+</style>

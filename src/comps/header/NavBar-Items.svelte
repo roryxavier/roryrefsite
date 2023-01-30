@@ -22,6 +22,7 @@
 		isSelected={navigation.path === pathname}
 		title={navigation.title}
 		href={navigation.path}
+		onClick={() => (pathname = navigation.path)}
 	/>
 {/each}
 <!-- <NavBarDropDown menus={furList} /> -->

@@ -15,12 +15,12 @@
 	<title>Rory Chris</title>
 
 	<main class="Page-body">
-		<div class="flex flex-row items-center" style="padding: 2rem">
+		<div class="Page-header flex flex-row items-center" style="padding: 2rem">
 			<img alt="Rory Badge" src={badge} class="w-40 rounded-3xl" />
-			<div class="w-10" />
+
 			<div class="flex flex-col grow items-center">
-				<p class="font-bold text-4xl">Rory Chris</p>
-				<p>Character Information Page</p>
+				<p class="text-center font-bold text-4xl">Rory Chris</p>
+				<p class="text-center">Character Information Page</p>
 			</div>
 		</div>
 
@@ -63,6 +63,22 @@
 </div>
 
 <style lang="scss">
+	.Page-header {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		@media (min-width: 520px) {
+			flex-direction: row;
+			gap: 2rem;
+		}
+
+		& > * {
+			& > * {
+				line-height: 1em;
+				margin: 0.2rem 0;
+			}
+		}
+	}
 	.Page {
 		main {
 			max-width: var(--max-content-width);
