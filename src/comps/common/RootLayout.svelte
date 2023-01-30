@@ -77,6 +77,7 @@
 		overflow-y: auto;
 		height: 100vh;
 		width: 100vw;
+		position: relative;
 	}
 	.AppPage-container {
 		z-index: 1;

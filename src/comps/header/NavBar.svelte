@@ -2,17 +2,14 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Fusonas from '../../vars/Fursonas';
 	import badge from '../../assets/badge.webp';
 	import ICON_ARROW from '../../assets/arrow_224071.svg';
 	import globalVars from '../../vars/GlobalVars';
-	import NavBarButton from './NavBar-Button.svelte';
-	import NavBarDropDown from './NavBar-DropDown.svelte';
+	import NavBarItems from './NavBar-Items.svelte';
 	export let isScrollDown = false;
 
 	// contants
 	const { navigationsLinks } = globalVars;
-	const furList = Fusonas;
 
 	// variables
 	let pathname = '';
@@ -24,14 +21,11 @@
 	});
 </script>
 
-<div class="NavBar-box" />
-<nav
-	class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'} {isExpand
-		? 'NavBar-isExpand'
-		: ''}"
->
-	<div class="NavBar-bar">
-		<a href="/"><img class="NavBar-logo" src={badge} alt="Page Logo" /></a>
+<div class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
+	<nav class="NavBar-bar {isExpand ? 'NavBar-bar-isExpand' : 'NavBar-bar-isCollapsed'}">
+		<a class="NavBar-logo" href="/">
+			<img class="NavBar-logo-icon" src={badge} alt="Page Logo" />
+		</a>
 
 		<span class="NavBar-title"
 			>{navigationsLinks.reduce(
@@ -40,17 +34,7 @@
 			)}</span
 		>
 
-		<div class="NavBar-items">
-			{#each navigationsLinks as navigation}
-				<NavBarButton
-					isSelected={navigation.path === pathname}
-					title={navigation.title}
-					href={navigation.path}
-				/>
-			{/each}
-
-			<!--			<NavBarDropDown menus={furList} />-->
-		</div>
+		<div class="NavBar-items"><NavBarItems /></div>
 
 		<button
 			class="NavBar-toggle"
@@ -59,74 +43,74 @@
 		>
 			<img class="NavBar-toggle-icon" src={ICON_ARROW} alt="Click to Expand" />
 		</button>
-	</div>
-
-	<div class="NavBar-dropdown">
-		{#each navigationsLinks as navigation}
-			<NavBarButton
-				isSelected={navigation.path === pathname}
-				title={navigation.title}
-				href={navigation.path}
-			/>
-		{/each}
-		<!-- <NavBarDropDown menus={furList} /> -->
-	</div>
-</nav>
+	</nav>
+</div>
 
 <style lang="scss">
-	.NavBar-box {
-		--height: 5rem;
-		min-height: var(--height);
-	}
 	.NavBar {
 		--height: 5rem;
-		--margin: 1rem;
-
-		z-index: 2;
 		height: var(--height);
 
-		--blur: 1em;
-		-webkit-backdrop-filter: blur(var(--blur));
-		backdrop-filter: blur(var(--blur));
-		overflow: hidden;
-
-		background: hsla(0, 0%, 100%, 0.3);
-		transition: all 0.3s;
-		box-shadow: 0 0 1rem #44b4fc;
-
-		display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
-		align-items: center;
-		justify-content: flex-start;
-
+		width: 100%;
+		z-index: 2;
+		position: sticky;
+		top: 0;
+		left: 0;
+		right: 0;
 		.NavBar-bar {
-			z-index: 2;
-			width: 100%;
-			max-width: var(--max-content-width);
+			--margin: 1rem;
+			height: var(--height);
 
-			overflow-y: visible;
+			--blur: 1em;
+			-webkit-backdrop-filter: blur(var(--blur));
+			backdrop-filter: blur(var(--blur));
 
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			align-items: center;
-			justify-content: space-between;
+			background: hsla(0, 0%, 100%, 0.3);
+			transition: all 0.3s;
+			box-shadow: 0 0 1rem #44b4fc;
 
+			display: grid;
+
+			.NavBar-logo {
+				grid-area: logo;
+			}
 			.NavBar-title {
-				flex-grow: 1;
+				grid-area: title;
+			}
+			.NavBar-items {
+				grid-area: items;
+			}
+			.NavBar-toggle {
+				grid-area: toggle;
+			}
+
+			.NavBar-logo {
+				--size: var(--height);
+				width: var(--size);
+				height: var(--size);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.NavBar-logo-icon {
+					--icon-size: calc(var(--size) - 2rem);
+					width: var(--icon-size);
+					height: var(--icon-size);
+					border-radius: inherit;
+				}
+			}
+			.NavBar-title {
+				height: var(--height);
 				color: #224071;
 				font-size: 1.5rem;
 				font-weight: 900;
-				margin: 0 1rem;
-			}
-			.NavBar-logo {
-				height: 3rem;
-				margin: 1rem 0.5rem 1rem 1rem;
-				border-radius: 50%;
+				flex-grow: 1;
+				display: flex;
+				align-items: center;
 			}
 			.NavBar-items {
-				width: max-content;
+				width: 100%;
+				height: var(--height);
 				overflow-y: visible;
 				overflow-x: auto;
 
@@ -134,7 +118,7 @@
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				justify-content: flex-start;
+				justify-content: flex-end;
 				flex-wrap: nowrap;
 
 				padding: 1.5rem 2rem 1.5rem 0.5rem;
@@ -169,111 +153,121 @@
 				}
 			}
 			.NavBar-toggle {
-				--size: 4rem;
+				--margin: 0.5rem;
+				--size: calc(var(--height) - var(--margin) - var(--margin));
 				width: var(--size);
 				height: var(--size);
-				margin: 0 1rem;
+				margin: var(--margin);
+				margin-left: 0;
+				margin-right: calc(var(--margin) * 2);
 				transition: 300ms;
+				-webkit-tap-highlight-color: transparent;
 
 				&:hover {
-					transform: scale(1.1);
+					.NavBar-toggle-icon {
+						transform: scale(1.1);
+					}
 				}
 				&:focus {
-					transform: scale(0.8);
+					.NavBar-toggle-icon {
+						transform: scale(0.8);
+					}
 				}
 
 				.NavBar-toggle-icon {
 					width: var(--size);
 					height: var(--size);
 					padding: 1.4rem;
+					transition: 300ms;
 				}
 			}
-		}
-		.NavBar-dropdown {
-			z-index: 1;
-			position: fixed;
-			top: 0;
-			left: 0;
-
-			width: 100vw;
-			max-width: 100vw;
-			padding-top: calc(var(--height) + 0.6rem);
-			padding-left: calc(var(--height) + 0.6rem);
-
-			transition: 300ms;
-			opacity: 0;
-			pointer-events: none;
-
-			gap: 1rem;
-			display: flex;
-			flex-direction: column;
-			flex-wrap: nowrap;
-			flex-grow: 1;
-			align-items: flex-start;
-			justify-content: flex-start;
 		}
 	}
 
 	// when small
 	@media (max-width: 700px) {
 		.NavBar {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			max-width: 100%;
-			border-radius: 0;
 			.NavBar-bar {
+				grid-template-columns: var(--height) 1fr calc(var(--height) - 1rem);
+				grid-template-rows: var(--height) 1fr;
+				grid-template-areas:
+					'logo title toggle'
+					'items items items';
+
+				position: sticky;
+				top: 0;
+				left: 0;
+				width: 100%;
+				max-width: 100%;
+
 				.NavBar-items {
-					display: none;
+					z-index: 1;
+
+					width: 100%;
+					height: 100%;
+					// padding-top: calc(var(--height) + 0.6rem);
+					padding-left: calc(var(--height));
+
+					transition: 300ms;
+
+					gap: 1rem;
+					display: flex;
+					flex-direction: column;
+					flex-wrap: nowrap;
+					flex-grow: 1;
+					align-items: flex-start;
+					justify-content: flex-start;
+				}
+			}
+			.NavBar-bar-isExpand {
+				height: 100vh;
+				background: hsla(0, 0%, 100%, 0.5);
+				box-shadow: none;
+
+				.NavBar-items {
+					opacity: 1;
+				}
+			}
+			.NavBar-bar-isCollapsed {
+				.NavBar-items {
+					opacity: 0;
+					pointer-events: none;
 				}
 			}
 		}
 	}
 	// when big
 	@media (min-width: 701px) {
-		.NavBar-box {
-			display: none;
-		}
 		.NavBar {
-			position: sticky;
-			min-height: var(--height);
 			.NavBar-bar {
+				grid-template-columns: var(--height) 1fr;
+				grid-template-rows: var(--height);
+				grid-template-areas: 'logo items';
+
+				position: sticky;
+				min-height: var(--height);
 				.NavBar-title {
 					display: none;
 				}
 				.NavBar-toggle {
 					display: none;
 				}
-			}
-			.NavBar-dropdown {
-				display: none;
+				.NavBar-dropdown {
+					display: none;
+				}
 			}
 		}
 		.NavBar-isScrolledUp {
-			top: var(--margin);
-			left: var(--margin);
-			width: calc(100% - var(--margin) - var(--margin));
-			max-width: var(--max-content-width);
-			border-radius: 1rem;
+			.NavBar-bar {
+				margin: var(--margin);
+				margin-bottom: 0;
+				border-radius: 1rem;
+			}
 		}
 		.NavBar-isScrolledDown {
-			top: 0;
-			left: 0;
-			width: 100%;
-			max-width: 100%;
-			border-radius: 0;
-		}
-	}
-
-	.NavBar-isExpand {
-		position: absolute;
-		height: 100vh;
-		background: hsla(0, 0%, 100%, 0.5);
-
-		.NavBar-dropdown {
-			opacity: 1;
-			pointer-events: initial;
+			.NavBar-bar {
+				border-radius: 0;
+			}
 		}
 	}
 </style>
