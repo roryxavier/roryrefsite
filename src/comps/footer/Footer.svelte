@@ -12,7 +12,7 @@
 
 <style>
 	.Footer {
-		background: url(https://ref.sebin-nyshkim.net/subtle-prism.svg) #0000a9;
+		background: #0000a9;
 		display: block;
 		background-blend-mode: multiply;
 		padding: max(1em, env(safe-area-inset-top)) 0 max(1em, env(safe-area-inset-bottom)) 0;

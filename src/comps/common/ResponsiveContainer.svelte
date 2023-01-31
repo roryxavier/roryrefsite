@@ -1,12 +1,13 @@
 <div class="section">
-	<div class="h-2.5" />
+	<div class="h-10" />
 	<slot />
 </div>
 
 <style>
 	.section {
+		--pad-width: 1rem;
 		margin: auto;
-		padding: 0 1rem 0 1rem;
-		max-width: 34rem;
+		padding: 0 var(--pad-width) 0 var(--pad-width);
+		max-width: 45rem;
 	}
 </style>
