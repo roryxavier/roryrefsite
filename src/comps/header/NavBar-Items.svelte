@@ -4,8 +4,9 @@
 	import NavBarDropDown from './NavBar-DropDown.svelte';
 	import globalVars from '../../vars/GlobalVars';
 	import Fusonas from '../../vars/Fursonas';
+	import type Nav from '../../model/Nav';
 
-	export let onClickItem = (item: Object) => {};
+	export let onClickItem = (item: Nav) => {};
 
 	const { navigationsLinks } = globalVars;
 	const furList = Fusonas;

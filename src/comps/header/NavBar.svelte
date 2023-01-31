@@ -6,6 +6,8 @@
 	import ICON_ARROW from '../../assets/arrow_224071.svg';
 	import globalVars from '../../vars/GlobalVars';
 	import NavBarItems from './NavBar-Items.svelte';
+	import type Nav from '../../model/Nav';
+
 	export let isScrollDown = false;
 
 	// contants
@@ -16,19 +18,14 @@
 	let isExpand: Boolean = false;
 	let title: String = '';
 
-	const setTitle = (t: String) => {
-		isExpand = false;
-		title = t;
-	};
-	const invalidateTitle = (item: Object | undefined) => {
+	const invalidateItem = (item: Nav) => {
 		pathname = window.location.pathname;
-		if (item) return setTitle(item.title);
-		setTitle(
-			navigationsLinks.reduce(
-				(title, navLink) => (navLink.path === pathname ? navLink.title : title),
-				''
-			)
-		);
+		isExpand = false;
+		title = item.title;
+	};
+	const invalidateTitle = () => {
+		const item = navigationsLinks.find((navigationsLink) => navigationsLink.path === pathname);
+		if (item) invalidateItem(item);
 	};
 
 	// lifecycles
@@ -44,10 +41,10 @@
 			<img class="NavBar-logo-icon" src={badge} alt="Page Logo" />
 		</a>
 
-		<span class="NavBar-title" on:click={() => (isExpand = !isExpand)}>{title}</span>
+		<span class="NavBar-title">{title}</span>
 
 		<div class="NavBar-items">
-			<NavBarItems onClickItem={(item) => invalidateTitle(item)} />
+			<NavBarItems onClickItem={(item) => invalidateItem(item)} />
 		</div>
 
 		<button
@@ -81,7 +78,6 @@
 
 			background: hsla(0, 0%, 100%, 0.3);
 			transition: all 0.3s;
-			box-shadow: 0 0 1rem #44b4fc;
 
 			display: grid;
 
@@ -171,10 +167,9 @@
 				--size: calc(var(--height) - var(--margin) - var(--margin));
 				width: var(--size);
 				height: var(--size);
-				margin: var(--margin);
-				margin-left: 0;
-				margin-right: calc(var(--margin) * 2);
+				margin: var(--margin) calc(var(--margin) * 2) var(--margin) 0;
 				transition: 300ms;
+				border-radius: 50%;
 				-webkit-tap-highlight-color: transparent;
 
 				&:hover {
@@ -193,16 +188,17 @@
 					height: var(--size);
 					padding: 1.4rem;
 					transition: 300ms;
+					border-radius: 50%;
 				}
 			}
 		}
 	}
 
 	// when small
-	@media (max-width: 700px) {
+	@media (max-width: 450px) {
 		.NavBar {
 			.NavBar-bar {
-				grid-template-columns: var(--height) 1fr calc(var(--height) - 1rem);
+				grid-template-columns: var(--height) 1fr calc(var(--height));
 				grid-template-rows: var(--height) 1fr;
 				grid-template-areas:
 					'logo title toggle'
@@ -219,8 +215,7 @@
 
 					width: 100%;
 					height: 100%;
-					// padding-top: calc(var(--height) + 0.6rem);
-					padding-left: calc(var(--height));
+					padding-left: calc(var(--height) + 0.1rem);
 
 					transition: 300ms;
 
@@ -249,9 +244,14 @@
 				}
 			}
 		}
+		.NavBar-isScrolledUp {
+			.NavBar-bar {
+				box-shadow: 0 0 1rem #44b4fc;
+			}
+		}
 	}
 	// when big
-	@media (min-width: 701px) {
+	@media (min-width: 451px) {
 		.NavBar {
 			display: flex;
 			flex-direction: column;
@@ -277,14 +277,17 @@
 		.NavBar-isScrolledUp {
 			.NavBar-bar {
 				width: var(--max-content-width);
+				max-width: calc(100% - var(--margin) - var(--margin));
 				margin: var(--margin);
 				margin-bottom: 0;
 				border-radius: 1rem;
+				box-shadow: 0 0 1rem #44b4fc;
 			}
 		}
 		.NavBar-isScrolledDown {
 			.NavBar-bar {
 				width: 100%;
+				max-width: 100%;
 				border-radius: 0;
 			}
 		}

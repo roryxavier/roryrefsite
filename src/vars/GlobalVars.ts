@@ -1,3 +1,5 @@
+import Nav from '../model/Nav';
+
 export default {
 	version: '0.0.1',
 	pageMetaData: {
@@ -7,10 +9,10 @@ export default {
 		commitHash: '463057b'
 	},
 	navigationsLinks: [
-		{ title: 'Home', path: '/' },
-		{ title: 'General', path: '/general/' },
-		{ title: 'Anatomy', path: '/anatomy/' },
-		{ title: 'Clothing', path: '/clothing/' }
+		new Nav('Home', '/'),
+		new Nav('General', '/general/'),
+		new Nav('Anatomy', '/anatomy/'),
+		new Nav('Clothing', '/clothing/')
 	],
 	socialLink: [
 		{
