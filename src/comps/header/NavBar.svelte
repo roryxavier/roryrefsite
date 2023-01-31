@@ -239,6 +239,9 @@
 	// when big
 	@media (min-width: 701px) {
 		.NavBar {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			.NavBar-bar {
 				grid-template-columns: var(--height) 1fr;
 				grid-template-rows: var(--height);
@@ -259,6 +262,7 @@
 		}
 		.NavBar-isScrolledUp {
 			.NavBar-bar {
+				width: var(--max-content-width);
 				margin: var(--margin);
 				margin-bottom: 0;
 				border-radius: 1rem;
@@ -266,6 +270,7 @@
 		}
 		.NavBar-isScrolledDown {
 			.NavBar-bar {
+				width: 100%;
 				border-radius: 0;
 			}
 		}
