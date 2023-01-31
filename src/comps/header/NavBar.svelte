@@ -24,6 +24,7 @@
 		title = item.title;
 	};
 	const invalidateTitle = () => {
+		pathname = window.location.pathname;
 		const item = navigationsLinks.find((navigationsLink) => navigationsLink.path === pathname);
 		if (item) invalidateItem(item);
 	};
