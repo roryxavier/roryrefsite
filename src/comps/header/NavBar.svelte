@@ -12,12 +12,29 @@
 	const { navigationsLinks } = globalVars;
 
 	// variables
-	let pathname = '';
-	let isExpand = false;
+	let pathname: String = '';
+	let isExpand: Boolean = false;
+	let title: String = '';
+
+	const setTitle = (t: String) => {
+		isExpand = false;
+		title = t;
+	};
+	const invalidateTitle = (item: Object | undefined) => {
+		pathname = window.location.pathname;
+		if (item) return setTitle(item.title);
+		setTitle(
+			navigationsLinks.reduce(
+				(title, navLink) => (navLink.path === pathname ? navLink.title : title),
+				''
+			)
+		);
+	};
 
 	// lifecycles
 	onMount(() => {
-		pathname = window.location.pathname;
+		invalidateTitle();
+		window.addEventListener('popstate', () => invalidateTitle());
 	});
 </script>
 
@@ -27,14 +44,11 @@
 			<img class="NavBar-logo-icon" src={badge} alt="Page Logo" />
 		</a>
 
-		<span class="NavBar-title"
-			>{navigationsLinks.reduce(
-				(title, navLink) => (navLink.path === pathname ? navLink.title : title),
-				''
-			)}</span
-		>
+		<span class="NavBar-title" on:click={() => (isExpand = !isExpand)}>{title}</span>
 
-		<div class="NavBar-items"><NavBarItems /></div>
+		<div class="NavBar-items">
+			<NavBarItems onClickItem={(item) => invalidateTitle(item)} />
+		</div>
 
 		<button
 			class="NavBar-toggle"
