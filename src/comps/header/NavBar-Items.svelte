@@ -16,6 +16,9 @@
 	// lifecycles
 	onMount(() => {
 		pathname = window.location.pathname;
+		window.addEventListener('popstate', () => {
+			pathname = window.location.pathname;
+		});
 	});
 </script>
 

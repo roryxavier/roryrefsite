@@ -12,17 +12,29 @@
 	const { navigationsLinks } = globalVars;
 
 	// variables
-	let pathname = '';
-	let isExpand = false;
-	let title = '';
+	let pathname: String = '';
+	let isExpand: Boolean = false;
+	let title: String = '';
+
+	const setTitle = (t: String) => {
+		isExpand = false;
+		title = t;
+	};
+	const invalidateTitle = (item: Object | undefined) => {
+		pathname = window.location.pathname;
+		if (item) return setTitle(item.title);
+		setTitle(
+			navigationsLinks.reduce(
+				(title, navLink) => (navLink.path === pathname ? navLink.title : title),
+				''
+			)
+		);
+	};
 
 	// lifecycles
 	onMount(() => {
-		pathname = window.location.pathname;
-		title = navigationsLinks.reduce(
-			(title, navLink) => (navLink.path === pathname ? navLink.title : title),
-			''
-		);
+		invalidateTitle();
+		window.addEventListener('popstate', () => invalidateTitle());
 	});
 </script>
 
@@ -35,12 +47,7 @@
 		<span class="NavBar-title" on:click={() => (isExpand = !isExpand)}>{title}</span>
 
 		<div class="NavBar-items">
-			<NavBarItems
-				onClickItem={(item) => {
-					isExpand = false;
-					title = item.title;
-				}}
-			/>
+			<NavBarItems onClickItem={(item) => invalidateTitle(item)} />
 		</div>
 
 		<button
