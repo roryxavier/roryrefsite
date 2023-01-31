@@ -5,6 +5,8 @@
 	import globalVars from '../../vars/GlobalVars';
 	import Fusonas from '../../vars/Fursonas';
 
+	export let onClickItem = (item: Object) => {};
+
 	const { navigationsLinks } = globalVars;
 	const furList = Fusonas;
 
@@ -22,7 +24,10 @@
 		isSelected={navigation.path === pathname}
 		title={navigation.title}
 		href={navigation.path}
-		onClick={() => (pathname = navigation.path)}
+		onClick={() => {
+			pathname = navigation.path;
+			onClickItem(navigation);
+		}}
 	/>
 {/each}
 <!-- <NavBarDropDown menus={furList} /> -->

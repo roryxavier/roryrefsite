@@ -14,10 +14,15 @@
 	// variables
 	let pathname = '';
 	let isExpand = false;
+	let title = '';
 
 	// lifecycles
 	onMount(() => {
 		pathname = window.location.pathname;
+		title = navigationsLinks.reduce(
+			(title, navLink) => (navLink.path === pathname ? navLink.title : title),
+			''
+		);
 	});
 </script>
 
@@ -27,14 +32,16 @@
 			<img class="NavBar-logo-icon" src={badge} alt="Page Logo" />
 		</a>
 
-		<span class="NavBar-title"
-			>{navigationsLinks.reduce(
-				(title, navLink) => (navLink.path === pathname ? navLink.title : title),
-				''
-			)}</span
-		>
+		<span class="NavBar-title" on:click={() => (isExpand = !isExpand)}>{title}</span>
 
-		<div class="NavBar-items"><NavBarItems /></div>
+		<div class="NavBar-items">
+			<NavBarItems
+				onClickItem={(item) => {
+					isExpand = false;
+					title = item.title;
+				}}
+			/>
+		</div>
 
 		<button
 			class="NavBar-toggle"
