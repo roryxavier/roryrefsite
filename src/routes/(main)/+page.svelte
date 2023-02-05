@@ -25,12 +25,11 @@
 		</div>
 
 		<p class="mb-5 font-bold text-1l">Welcome to Rory's Info Page</p>
-		<p>On this page your can learn all about Rory, your friendly neighborhood blue wolf!</p>
-		<p>
-			I started this page to consolidate all my fursona in one single page, and cause why not it's
-			fun x3. And also i started this page to have single point of truth with all the info artist
-			commission can possibly need. Feel free to reach me out if need some general feedback about
-			this page.
+		<p class="text-justify">
+			Welcome to the reference sheet for Rory, your friendly neighborhood blue wolf. As a programmer
+			and furry, I created this page to gather all information about my fursona in one central
+			location. I also wanted to provide a single source of truth for any artist commission needs.
+			If you have any questions or feedback, don't hesitate to reach out to me.
 		</p>
 
 		<div class="mb-5" />
@@ -44,9 +43,9 @@
 		<div class="mb-5" />
 
 		<p class="Note">
-			<b>Note:</b> This page is still under heavy construction, as indicated by the 0.x.x version number
-			in the footer. I'm continuously updating the site and adding details and information to it. In
-			case you run into something weird, definitely let me know!
+			<b>Note:</b> Please note that this page is still a work in progress, as indicated by the version
+			number 0.x.x in the footer. I am actively updating and refining the site, adding more information
+			and details. If you encounter any issues, please do not hesitate to bring them to my attention.
 		</p>
 		<div class="mb-5" />
 		<h2>Complete Ref Sheet</h2>
@@ -79,6 +78,7 @@
 			}
 		}
 	}
+
 	.Page {
 		main {
 			max-width: var(--max-content-width);
@@ -106,6 +106,7 @@
 				//	font-size: 2rem;
 				//}
 			}
+
 			//
 			//p {
 			//	margin: 1rem 0;

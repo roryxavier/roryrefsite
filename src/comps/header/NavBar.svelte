@@ -14,9 +14,9 @@
 	const { navigationsLinks } = globalVars;
 
 	// variables
-	let pathname: String = '';
-	let isExpand: Boolean = false;
-	let title: String = '';
+	let pathname = '';
+	let isExpand = false;
+	let title = '';
 
 	const invalidateItem = (item: Nav) => {
 		pathname = window.location.pathname;
@@ -43,7 +43,6 @@
 		</a>
 
 		<span class="NavBar-title">{title}</span>
-
 		<div class="NavBar-items">
 			<NavBarItems onClickItem={(item) => invalidateItem(item)} />
 		</div>
