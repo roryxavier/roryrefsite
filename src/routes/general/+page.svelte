@@ -1,11 +1,11 @@
 <script>
 	// import UnderConstruction from '../../../comps/UnderConstruction.svelte';
-	import ResponsiveContainer from '../../../comps/common/ResponsiveContainer.svelte';
-	import Fursonas from '../../../vars/Fursonas';
+	import ResponsiveContainer from '../../comps/common/ResponsiveContainer.svelte';
+	import Fursonas from '../../vars/Fursonas';
 	import TableTitle from './Table-Title.svelte';
 	import TableRow from './Table-Row.svelte';
-	import DropDownCard from '../../../comps/common/DropDownCard.svelte';
-	import Quickfact from '../../../vars/Quickfact';
+	import DropDownCard from '../../comps/common/DropDownCard.svelte';
+	import Quickfact from '../../vars/Quickfact';
 
 	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
 

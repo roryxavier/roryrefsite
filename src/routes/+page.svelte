@@ -1,9 +1,9 @@
 <script>
-	import badge from '../../assets/badge.webp';
-	import globalVars from '../../vars/GlobalVars';
-	import ReferenceButton from '../../comps/home/Reference-Button.svelte';
-	import SfwToggle from '../../comps/home/SFW-Toggle.svelte';
-	import SocialButton from '../../comps/home/SocialButton.svelte';
+	import badge from '../assets/badge.webp';
+	import globalVars from '../vars/GlobalVars';
+	import ReferenceButton from '../comps/home/Reference-Button.svelte';
+	import SfwToggle from '../comps/home/SFW-Toggle.svelte';
+	import SocialButton from '../comps/home/SocialButton.svelte';
 
 	const referenceAvailability = {
 		sfw: true,

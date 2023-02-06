@@ -36,6 +36,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
+
 <div class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
 	<nav class="NavBar-bar {isExpand ? 'NavBar-bar-isExpand' : 'NavBar-bar-isCollapsed'}">
 		<a class="NavBar-logo" href="/">

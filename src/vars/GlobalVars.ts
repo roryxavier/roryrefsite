@@ -10,9 +10,9 @@ export default {
 	},
 	navigationsLinks: [
 		new Nav('Home', '/'),
-		new Nav('General', '/general/'),
-		new Nav('Anatomy', '/anatomy/'),
-		new Nav('Clothing', '/clothing/')
+		new Nav('General', '/general'),
+		new Nav('Anatomy', '/anatomy'),
+		new Nav('Clothing', '/clothing')
 	],
 	socialLink: [
 		{
