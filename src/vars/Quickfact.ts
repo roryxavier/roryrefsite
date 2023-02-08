@@ -1,4 +1,4 @@
-export default [
+export const Personality = [
 	'Happy Go Lucky',
 	'Kind',
 	'Introvert',
@@ -6,3 +6,4 @@ export default [
 	'Shy',
 	'Empathy'
 ];
+export const Hobbies = ['Programming', 'Tech', 'Cooking', 'Traveling'];

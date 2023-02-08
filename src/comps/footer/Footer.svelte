@@ -3,10 +3,9 @@
 </script>
 
 <div class="Footer">
-	<p>{globalVars.pageMetaData.commitHash} - v{globalVars.version}</p>
 	<p>
-		© {globalVars.pageMetaData.yearUpdated}
-		{globalVars.pageMetaData.copyWriteName} All Rights Reserved
+		v{globalVars.version} © {globalVars.pageMetaData.yearUpdated}
+		{globalVars.pageMetaData.copyWriteName}
 	</p>
 </div>
 

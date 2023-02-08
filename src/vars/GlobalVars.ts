@@ -1,9 +1,9 @@
 import Nav from '../model/Nav';
 
 export default {
-	version: '0.1.2',
+	version: '0.1.5',
 	pageMetaData: {
-		copyWriteName: 'Rory Xavier (RX)',
+		copyWriteName: 'Rory Xavier',
 		dateUpdated: '12 December',
 		yearUpdated: '2023',
 		commitHash: '463057b'
