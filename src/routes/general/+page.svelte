@@ -40,7 +40,7 @@
 			<div id="personality-text" class="flex flex-col space-y-3 text-lg text-justify">
 				<p>
 					Rory, the blue wolf, is known for his cheerful and happy-go-lucky personality, which is
-					paired with his high level of empathy. Despite being an introvert and shy, Rory has a
+					paired with his high level of empathy. Despite being an introvert and shy. Rory has a
 					genuine desire to make those around him happy. He uses his empathetic nature to connect
 					with others and understand their feelings, and goes out of his way to bring joy and cheer
 					to his friends.
@@ -56,7 +56,7 @@
 					He's empathetic nature and desire to help others is truly inspiring, and it's one of the
 					things that makes him such a special and unique individual. He has a heart full of love
 					and compassion, and he uses his talents and abilities to bring happiness to those around
-					him. Whether it's through his words, actions, or simply his infectious smile, . He is
+					him. Whether it's through his words, actions, or simply his infectious smile. He is
 					truly a friend to cherish and a source of constant inspiration to all those who know him.
 				</p>
 			</div>
