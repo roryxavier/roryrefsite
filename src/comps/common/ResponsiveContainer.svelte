@@ -8,6 +8,6 @@
 		--pad-width: 1rem;
 		margin: auto;
 		padding: 0 var(--pad-width) 0 var(--pad-width);
-		max-width: 45rem;
+		max-width: 30rem;
 	}
 </style>

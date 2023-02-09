@@ -1,7 +1,7 @@
 import Nav from '../model/Nav';
 
 export default {
-	version: '0.1.5',
+	version: '0.1.9',
 	pageMetaData: {
 		copyWriteName: 'Rory Xavier',
 		dateUpdated: '12 December',

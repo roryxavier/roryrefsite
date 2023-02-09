@@ -29,7 +29,7 @@
 
 		<div class="Section">
 			<TableTitle title="Personality" id_tag="personality" />
-			<DropDownCard title="Summary">
+			<DropDownCard title="QuickFacts">
 				<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
 					{#each quickFacts.Personality as quick}
 						<li>{quick}</li>
@@ -49,20 +49,20 @@
 					His warm and friendly demeanor has earned him the love and admiration of those in his
 					inner circle. He is always there to listen and offer support, and his kind and caring
 					personality makes people feel at ease. Whether it's through his words, actions, or simply
-					his infectious smile, Rory never fails to bring happiness to those
+					his infectious smile, Rory never fails to bring happiness to those.
 				</p>
 
 				<p>
 					He's empathetic nature and desire to help others is truly inspiring, and it's one of the
 					things that makes him such a special and unique individual. He has a heart full of love
 					and compassion, and he uses his talents and abilities to bring happiness to those around
-					him. Whether it's through his words, actions, or simply his infectious smile. He is
-					truly a friend to cherish and a source of constant inspiration to all those who know him.
+					him. Whether it's through his words, actions, or simply his infectious smile. He is truly
+					a friend to cherish and a source of constant inspiration to all those who know him.
 				</p>
 			</div>
 
 			<TableTitle title="Hobbies" id_tag="hobbies" />
-			<DropDownCard title="Summary">
+			<DropDownCard title="QuickFacts">
 				<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
 					{#each quickFacts.Hobbies as quick}
 						<li>{quick}</li>
@@ -96,6 +96,34 @@
 					frustration, this friend has been a constant source of inspiration and encouragement for
 					Rory. One food he dislikes is fish, and he will go out of his way to avoid it.
 				</p>
+
+				<TableTitle title="Food & Drinks" id_tag="food_drinks" />
+				<DropDownCard title="QuickFacts">
+					<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
+						{#each quickFacts.FoodDrinks as quick}
+							<li>{quick}</li>
+						{/each}
+					</div>
+				</DropDownCard>
+				<div id="food-drink" class="flex flex-col space-y-3 text-lg text-justify">
+					<p>
+						Rory has a unique way of starting his day, he opts for a cup of warm and comforting
+						chocolate coffee instead of the conventional plain coffee. Unlike many coffee lovers,
+						Rory has a distaste for bitter coffee, which is why he cannot drink coffee without a
+						touch of sweetness. This love for coffee has led him to develop aspirations of brewing
+						his own coffee in the future, rather than relying on store-bought options.
+					</p>
+					<p>
+						He is also a food enthusiast, and he enjoys cooking a variety of dishes, with fried
+						noodles or rice being one of his favorites. He has a special affinity for western-style
+						cuisine, such as Mac and Cheese, burgers, chicken chops, and lasagna. He has even
+						learned to make these dishes from one of his foodie friends. In the evening.
+					</p>
+					<p>
+						He satisfies his sweet tooth with a glass of chocolate milk, rounding off his day with a
+						comforting and indulgent treat.
+					</p>
+				</div>
 			</div>
 		</div>
 	</ResponsiveContainer>

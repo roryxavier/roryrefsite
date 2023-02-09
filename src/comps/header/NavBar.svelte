@@ -285,7 +285,7 @@
 				margin: var(--margin);
 				margin-bottom: 0;
 				border-radius: 1rem;
-				box-shadow: 0 0 1rem #44b4fc;
+				box-shadow: 0 0 1rem #78a2c0;
 			}
 		}
 		.NavBar-isScrolledDown {
