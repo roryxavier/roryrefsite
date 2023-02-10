@@ -2,11 +2,13 @@
 	export let title;
 </script>
 
-<div class="card">
-	<h3 class="title" style="padding: 20px">{title}</h3>
-	<div class="border-b-4 border-yellow-200" />
-	<div class="content" style="padding: 20px">
-		<slot />
+<div class="md:max-lg:pl-20 md:max-lg:pr-20">
+	<div class="card">
+		<h3 class="title" style="padding: 20px">{title}</h3>
+		<div class="border-b-4 border-yellow-200" />
+		<div class="content" style="padding: 20px">
+			<slot />
+		</div>
 	</div>
 </div>
 

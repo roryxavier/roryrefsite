@@ -29,6 +29,7 @@
 
 		<div class="Section">
 			<TableTitle title="Personality" id_tag="personality" />
+
 			<DropDownCard title="QuickFacts">
 				<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
 					{#each quickFacts.Personality as quick}
@@ -36,6 +37,7 @@
 					{/each}
 				</div>
 			</DropDownCard>
+
 			<br />
 			<div id="personality-text" class="flex flex-col space-y-3 text-lg text-justify">
 				<p>

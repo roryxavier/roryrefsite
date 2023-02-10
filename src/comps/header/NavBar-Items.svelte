@@ -4,9 +4,9 @@
 	import NavBarDropDown from './NavBar-DropDown.svelte';
 	import globalVars from '../../vars/GlobalVars';
 	import Fusonas from '../../vars/Fursonas';
-	import type Nav from '../../model/Nav';
+	import type RouteInfo from '../../model/RouteInfo';
 
-	export let onClickItem = (item: Nav) => {};
+	export let onClickItem = (item: RouteInfo) => {};
 
 	const { navigationsLinks } = globalVars;
 	const furList = Fusonas;
@@ -30,6 +30,8 @@
 		href={navigation.path}
 		onClick={() => {
 			pathname = navigation.path;
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
 			onClickItem(navigation);
 		}}
 	/>

@@ -6,22 +6,24 @@
 	import ICON_ARROW from '../../assets/arrow_224071.svg';
 	import globalVars from '../../vars/GlobalVars';
 	import NavBarItems from './NavBar-Items.svelte';
-	import type Nav from '../../model/Nav';
+	import type RouteInfo from '../../model/RouteInfo';
 
 	export let isScrollDown = false;
 
-	// contants
+	// constant
 	const { navigationsLinks } = globalVars;
 
 	// variables
 	let pathname = '';
 	let isExpand = false;
 	let title = '';
+	let header = '';
 
-	const invalidateItem = (item: Nav) => {
+	const invalidateItem = (item: RouteInfo) => {
 		pathname = window.location.pathname;
 		isExpand = false;
 		title = item.title;
+		header = item.header;
 	};
 	const invalidateTitle = () => {
 		pathname = window.location.pathname;
@@ -37,7 +39,7 @@
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{header}</title>
 </svelte:head>
 
 <div class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
@@ -72,6 +74,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
+
 		.NavBar-bar {
 			--margin: 1rem;
 			height: var(--height);
@@ -88,12 +91,15 @@
 			.NavBar-logo {
 				grid-area: logo;
 			}
+
 			.NavBar-title {
 				grid-area: title;
 			}
+
 			.NavBar-items {
 				grid-area: items;
 			}
+
 			.NavBar-toggle {
 				grid-area: toggle;
 			}
@@ -106,6 +112,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+
 				.NavBar-logo-icon {
 					--icon-size: calc(var(--size) - 2rem);
 					width: var(--icon-size);
@@ -113,6 +120,7 @@
 					border-radius: inherit;
 				}
 			}
+
 			.NavBar-title {
 				height: var(--height);
 				color: #224071;
@@ -122,6 +130,7 @@
 				display: flex;
 				align-items: center;
 			}
+
 			.NavBar-items {
 				width: 100%;
 				height: var(--height);
@@ -147,25 +156,31 @@
 
 				scrollbar-width: var(--scrollbar-size);
 				scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+
 				&::-webkit-scrollbar {
 					height: var(--scrollbar-size);
 					width: var(--scrollbar-size);
 				}
+
 				&::-webkit-scrollbar-thumb {
 					border-radius: var(--scrollbar-thumb-radius);
 					background-color: var(--scrollbar-thumb-color);
+
 					&:hover {
 						background-color: var(--scrollbar-thumb-color-hover);
 					}
 				}
+
 				&::-webkit-scrollbar-track {
 					margin: var(--scrollbar-track-margin);
 					background-color: var(--scrollbar-track-color);
+
 					&:hover {
 						background-color: var(--scrollbar-track-color-hover);
 					}
 				}
 			}
+
 			.NavBar-toggle {
 				--margin: 0.5rem;
 				--size: calc(var(--height) - var(--margin) - var(--margin));
@@ -181,6 +196,7 @@
 						transform: scale(1.1);
 					}
 				}
+
 				&:focus {
 					.NavBar-toggle-icon {
 						transform: scale(0.8);
@@ -232,6 +248,7 @@
 					justify-content: flex-start;
 				}
 			}
+
 			.NavBar-bar-isExpand {
 				height: 100vh;
 				background: hsla(0, 0%, 100%, 0.5);
@@ -241,6 +258,7 @@
 					opacity: 1;
 				}
 			}
+
 			.NavBar-bar-isCollapsed {
 				.NavBar-items {
 					opacity: 0;
@@ -250,16 +268,18 @@
 		}
 		.NavBar-isScrolledUp {
 			.NavBar-bar {
-				box-shadow: 0 0 1rem #44b4fc;
+				box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 			}
 		}
 	}
+
 	// when big
 	@media (min-width: 451px) {
 		.NavBar {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+
 			.NavBar-bar {
 				grid-template-columns: var(--height) 1fr;
 				grid-template-rows: var(--height);
@@ -267,12 +287,15 @@
 
 				position: sticky;
 				min-height: var(--height);
+
 				.NavBar-title {
 					display: none;
 				}
+
 				.NavBar-toggle {
 					display: none;
 				}
+
 				.NavBar-dropdown {
 					display: none;
 				}

@@ -1,7 +1,7 @@
-import Nav from '../model/Nav';
+import RouteInfo from '../model/RouteInfo';
 
 export default {
-	version: '0.1.9',
+	version: '0.2.0',
 	pageMetaData: {
 		copyWriteName: 'Rory Xavier',
 		dateUpdated: '12 December',
@@ -9,10 +9,10 @@ export default {
 		commitHash: '463057b'
 	},
 	navigationsLinks: [
-		new Nav('Home', '/'),
-		new Nav('General', '/general'),
-		new Nav('Anatomy', '/anatomy'),
-		new Nav('Clothing', '/clothing')
+		new RouteInfo('Home', '/', 'Hello Rory!'),
+		new RouteInfo('General', '/general', 'Rory - General'),
+		new RouteInfo('Anatomy', '/anatomy', 'Rory - Anatomy'),
+		new RouteInfo('Clothing', '/clothing', 'Rory - Clothing')
 	],
 	socialLink: [
 		{

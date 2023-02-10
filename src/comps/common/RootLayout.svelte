@@ -67,7 +67,7 @@
 		background-attachment: fixed;
 		background-size: cover;
 
-		--max-content-width: 30rem;
+		--max-content-width: 48rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

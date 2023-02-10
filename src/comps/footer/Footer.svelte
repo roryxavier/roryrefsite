@@ -2,23 +2,10 @@
 	import globalVars from '../../vars/GlobalVars';
 </script>
 
-<div class="Footer">
+<div class="pt-4 pb-4 w-full text-center text-white bg-blue-800">
 	<p>
 		v{globalVars.version} © {globalVars.pageMetaData.yearUpdated}
 		{globalVars.pageMetaData.copyWriteName}
 	</p>
+	<p>Created by Rory 🐺 & Jimmy 🦊</p>
 </div>
-
-<style>
-	.Footer {
-		background: #0000a9;
-		display: block;
-		background-blend-mode: multiply;
-		padding: max(1em, env(safe-area-inset-top)) 0 max(1em, env(safe-area-inset-bottom)) 0;
-		box-sizing: border-box;
-		width: 100%;
-
-		color: white;
-		text-align: center;
-	}
-</style>

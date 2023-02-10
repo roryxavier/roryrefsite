@@ -2,29 +2,40 @@
 	import badge from '../assets/badge.webp';
 	import globalVars from '../vars/GlobalVars';
 	import ReferenceButton from '../comps/home/Reference-Button.svelte';
-	import SfwToggle from '../comps/home/SFW-Toggle.svelte';
+	// import SfwToggle from '../comps/home/SFW-Toggle.svelte';
 	import SocialButton from '../comps/home/SocialButton.svelte';
+	import Fursonas from '../vars/Fursonas';
+	import CardText from '../comps/common/CardText.svelte';
 
-	const referenceAvailability = {
-		sfw: true,
-		nsfw: false
-	};
+	// const referenceAvailability = {
+	// 	sfw: true,
+	// 	nsfw: false
+	// };
+	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
 </script>
 
 <div class="Page">
-	<title>Rory Chris</title>
-
 	<main class="Page-body">
-		<div class="Page-header flex flex-row items-center" style="padding: 2rem">
-			<img alt="Rory Badge" src={badge} class="w-40 rounded-3xl" />
-
-			<div class="flex flex-col grow items-center">
-				<p class="text-center font-bold text-4xl">Rory Chris</p>
-				<p class="text-center">Character Information Page</p>
-			</div>
+		<div class="Page-header flex flex-col items-center">
+			<img alt="Rory Badge" src={badge} class="md:w-60 w-40 rounded-3xl pb-2" />
+			<p class="text-center font-bold text-3xl text-blue-500">Rory Here!</p>
+			<p class="text-center pt-1 pb-10 text-lg">24 | He/Him</p>
 		</div>
-
-		<p class="mb-5 font-bold text-1l">Welcome to Rory's Info Page</p>
+		<img
+			src={roryInfo.ref_link + '?width=1000'}
+			alt="Rory Chris RefSheet"
+			style="width: 120%;float: start"
+		/>
+		<p class="text-center pt-1 pb-1">
+			art by <a class="text-blue-600" href="https://twitter.com/valdithzam">@valdithzam</a>
+		</p>
+		<div class="References">
+			<ReferenceButton
+				title="Download Refsheet ⬇"
+				onClick={() => window.open(roryInfo.ref_link, '_blank')}
+			/>
+		</div>
+		<p class="mb-5 pt-5 font-bold text-1l">Welcome to Rory's Refsheet Page</p>
 		<p class="text-justify">
 			Welcome to the reference sheet for Rory, your friendly neighborhood blue wolf. As a programmer
 			and furry, I created this page to gather all information about my fursona in one central
@@ -42,42 +53,31 @@
 		</ul>
 		<div class="mb-5" />
 
-		<p class="Note">
+		<CardText>
 			<b>Note:</b> Please note that this page is still a work in progress, as indicated by the version
 			number 0.x.x in the footer. I am actively updating and refining the site, adding more information
 			and details. If you encounter any issues, please do not hesitate to bring them to my attention.
-		</p>
-		<div class="mb-5" />
-		<h2>Complete Ref Sheet</h2>
-		<p>Just here to fetch the ref sheet?</p>
-
-		<div class="mb-5" />
-		<div class="References">
-			<ReferenceButton
-				title="Download Refsheet (10 MB) ⬇ (NOT WORK)️"
-				onClick={() => window.alert('🦊')}
-			/>
-		</div>
+		</CardText>
 	</main>
 </div>
 
 <style lang="scss">
-	.Page-header {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		@media (min-width: 520px) {
-			flex-direction: row;
-			gap: 2rem;
-		}
-
-		& > * {
-			& > * {
-				line-height: 1em;
-				margin: 0.2rem 0;
-			}
-		}
-	}
+	//.Page-header {
+	//	display: flex;
+	//	flex-direction: column;
+	//	gap: 1rem;
+	//	@media (min-width: 520px) {
+	//		flex-direction: row;
+	//		gap: 2rem;
+	//	}
+	//
+	//	& > * {
+	//		& > * {
+	//			line-height: 1em;
+	//			margin: 0.2rem 0;
+	//		}
+	//	}
+	//}
 
 	.Page {
 		main {
@@ -95,50 +95,35 @@
 				align-items: center;
 				padding: 2rem;
 				gap: 0.5rem;
-
-				//img {
-				//	width: 10em;
-				//	border-radius: 0.8em;
-				//}
-
-				//p {
-				//	font-weight: 500;
-				//	font-size: 2rem;
-				//}
 			}
 
-			//
-			//p {
-			//	margin: 1rem 0;
+			//.Page-section-title {
+			//	margin-top: 2em;
 			//}
-
-			.Page-section-title {
-				margin-top: 2em;
-			}
-
-			.Page-Socials {
-				width: 10rem;
-				display: flex;
-				flex-direction: column;
-				align-items: stretch;
-				gap: 0.6rem;
-			}
-
-			.Note {
-				background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
-				color: white;
-				border-left: 0.2em solid #224071;
-				padding: 1rem;
-			}
-
-			.References {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				width: 100%;
-				max-width: var(--max-content-width);
-				gap: 01rem;
-			}
+			//
+			//.Page-Socials {
+			//	width: 10rem;
+			//	display: flex;
+			//	flex-direction: column;
+			//	align-items: stretch;
+			//	gap: 0.6rem;
+			//}
+			//
+			//.Note {
+			//	background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
+			//	color: white;
+			//	border-left: 0.2em solid #224071;
+			//	padding: 1rem;
+			//}
+			//
+			//.References {
+			//	display: flex;
+			//	flex-direction: column;
+			//	align-items: center;
+			//	width: 100%;
+			//	max-width: var(--max-content-width);
+			//	gap: 01rem;
+			//}
 		}
 	}
 </style>
