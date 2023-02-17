@@ -9,6 +9,7 @@
 	import type RouteInfo from '../../model/RouteInfo';
 
 	export let isScrollDown = false;
+	export let onItemSelected = (item: RouteInfo) => {};
 
 	// constant
 	const { navigationsLinks } = globalVars;
@@ -24,6 +25,7 @@
 		isExpand = false;
 		title = item.title;
 		header = item.header;
+		onItemSelected(item);
 	};
 	const invalidateTitle = () => {
 		pathname = window.location.pathname;
