@@ -27,7 +27,7 @@
 	<button
 		class="NavBarButton {isSelected ? 'NavBarButton-isSelected' : 'NavBarButton-isDeselected'}"
 		on:click={() => onClick()}
-		on:blur={() => onBlur()}
+		on:blur={(e) => onBlur(e)}
 		on:focus={() => onFocus()}
 	>
 		{title}
