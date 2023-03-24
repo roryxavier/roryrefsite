@@ -1,36 +1,73 @@
 <script>
+	import ICON_ARROW from '../../assets/arrow_224071.svg';
+
 	export let title;
+	export let isExpand = false;
 </script>
 
-<div class="md:max-lg:pl-20 md:max-lg:pr-20">
-	<div class="card">
-		<h3 class="title" style="padding: 20px">{title}</h3>
-		<div class="border-b-4 border-yellow-200" />
-		<div class="content" style="padding: 20px">
-			<slot />
-		</div>
+<div
+	class="DropDownCard flex flex-col items-stretch justify-start rounded-xl"
+	isExpand={`${isExpand}`}
+>
+	<button
+		class="header w-full p-4 flex flex-row items-center justify-between gap-5 text-start"
+		on:click={() => (isExpand = !isExpand)}
+	>
+		<h3 class="grow text-white text-lg font-bold">{title}</h3>
+		<img class="w-6 h-6 p-1" src={ICON_ARROW} alt="Click to Toggle" />
+	</button>
+
+	<div class="content">
+		<slot />
 	</div>
 </div>
 
-<style>
-	.card {
+<style lang="scss">
+	.DropDownCard {
 		background: linear-gradient(120deg, #0f4c9c, #6bc5fa);
-		border-radius: 10px;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-		/*padding: 20px;*/
+		overflow: hidden;
+
+		.header {
+			img {
+				transition: all 0.2s;
+			}
+		}
+
+		.content {
+			color: white;
+			padding: 20px;
+			border-top: solid #fef08a;
+			transition: all 0.2s;
+		}
 	}
 
-	.title {
-		color: white;
-		font-weight: bold;
-		font-size: 24px;
-		margin: 0;
-	}
+	.DropDownCard[isExpand='true'] {
+		.content {
+			opacity: 1;
+			pointer-events: initial;
+			border-top-width: 4px;
 
-	.content {
-		color: white;
-		/*font-size: 16px;*/
-		/*opacity: 0.7;*/
-		/*margin: 0;*/
+			height: max-content;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+	.DropDownCard[isExpand='false'] {
+		.header {
+			img {
+				transform: rotate(180deg);
+			}
+		}
+		.content {
+			opacity: 0;
+			pointer-events: none;
+			border-width: 0;
+			border-top-width: 0;
+
+			height: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 	}
 </style>

@@ -252,7 +252,7 @@
 			}
 
 			.NavBar-bar-isExpand {
-				height: 100vh;
+				height: 100dvh;
 				background: hsla(0, 0%, 100%, 0.5);
 				box-shadow: none;
 

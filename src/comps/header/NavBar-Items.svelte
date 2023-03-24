@@ -36,4 +36,4 @@
 		}}
 	/>
 {/each}
-<NavBarDropDown menus={furList} />
+<!-- <NavBarDropDown menus={furList} /> -->

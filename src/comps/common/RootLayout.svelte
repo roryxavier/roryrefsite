@@ -73,7 +73,7 @@
 		align-items: center;
 
 		overflow-y: auto;
-		height: 100vh;
+		height: 100dvh;
 		width: 100vw;
 		position: relative;
 	}

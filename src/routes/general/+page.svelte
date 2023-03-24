@@ -31,7 +31,7 @@
 			<TableTitle title="Personality" id_tag="personality" />
 
 			<DropDownCard title="QuickFacts">
-				<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
+				<div class="grid md:grid-cols-2 sm:grid-cols-1">
 					{#each quickFacts.Personality as quick}
 						<li>{quick}</li>
 					{/each}

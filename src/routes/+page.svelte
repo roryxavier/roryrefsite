@@ -15,43 +15,49 @@
 </script>
 
 <div class="Page">
-	<main class="Page-body">
-		<div class="Page-header flex flex-col items-center">
-			<img alt="Rory Badge" src={badge} class="md:w-60 w-40 rounded-3xl pb-2" />
-			<p class="text-center font-bold text-3xl text-blue-500">Rory Here!</p>
-			<p class="text-center pt-1 pb-10 text-lg">24 | He/Him</p>
+	<main class="Page-body flex flex-col gap-12">
+		<div class="Page-header flex flex-col items-center gap-1">
+			<img alt="Rory Badge" src={badge} class="md:w-60 w-40 rounded-3xl" />
+			<span class="text-center font-bold text-3xl text-blue-500">Rory Here!</span>
+			<span class="text-center text-lg">24 | He/Him</span>
 		</div>
-		<img
-			src={roryInfo.ref_link + '?width=1000'}
-			alt="Rory Chris RefSheet"
-			style="width: 120%;float: start"
-		/>
-		<p class="text-center pt-1 pb-1">
-			art by <a class="text-blue-600" href="https://twitter.com/valdithzam">@valdithzam</a>
-		</p>
-		<div class="References">
-			<ReferenceButton
-				title="Download Refsheet ⬇"
-				onClick={() => window.open(roryInfo.ref_link, '_blank')}
-			/>
-		</div>
-		<p class="mb-5 pt-5 font-bold text-1l">Welcome to Rory's Refsheet Page</p>
-		<p class="text-justify">
-			Welcome to the reference sheet for Rory, your friendly neighborhood blue wolf. As a programmer
-			and furry, I created this page to gather all information about my fursona in one central
-			location. I also wanted to provide a single source of truth for any artist commission needs.
-			If you have any questions or feedback, don't hesitate to reach out to me.
-		</p>
 
-		<div class="mb-5" />
-		<ul class="Page-Socials">
+		<div class="flex flex-col gap-2">
+			<img src={roryInfo.ref_link + '?width=1000'} alt="Rory Chris RefSheet" style="width: 120%;" />
+			<span class="text-base text-center">
+				art by <a
+					class="text-blue-600"
+					href="https://twitter.com/valdithzam"
+					target="_blank"
+					rel="noreferrer">@valdithzam</a
+				>
+			</span>
+
+			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
+				<ReferenceButton
+					title="Download Refsheet ⬇"
+					onClick={() => window.open(roryInfo.ref_link, '_blank')}
+				/>
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-2">
+			<h2 class="font-bold text-2xl">Welcome to Rory's Refsheet Page</h2>
+			<p class="text-justify leading-6 text-lg">
+				Welcome to the reference sheet for Rory, your friendly neighborhood blue wolf. As a
+				programmer and furry, I created this page to gather all information about my fursona in one
+				central location. I also wanted to provide a single source of truth for any artist
+				commission needs. If you have any questions or feedback, don't hesitate to reach out to me.
+			</p>
+		</div>
+
+		<ul class="flex flex-row flex-wrap items-stretch justify-start gap-1">
 			{#each globalVars.socialLink as socialLink}
 				<li>
 					<SocialButton title={socialLink.title} icon={socialLink.icon} href={socialLink.href} />
 				</li>
 			{/each}
 		</ul>
-		<div class="mb-5" />
 
 		<CardText>
 			<b>Note:</b> Please note that this page is still a work in progress, as indicated by the version
@@ -62,22 +68,20 @@
 </div>
 
 <style lang="scss">
-	//.Page-header {
-	//	display: flex;
-	//	flex-direction: column;
-	//	gap: 1rem;
-	//	@media (min-width: 520px) {
-	//		flex-direction: row;
-	//		gap: 2rem;
-	//	}
-	//
-	//	& > * {
-	//		& > * {
-	//			line-height: 1em;
-	//			margin: 0.2rem 0;
-	//		}
-	//	}
-	//}
+	// .Page-header { 
+	// 	gap: 1rem;
+	// 	@media (min-width: 520px) {
+	// 		flex-direction: row;
+	// 		gap: 2rem;
+	// 	}
+
+	// 	& > * {
+	// 		& > * {
+	// 			line-height: 1em;
+	// 			margin: 0.2rem 0;
+	// 		}
+	// 	}
+	// }
 
 	.Page {
 		main {
@@ -97,33 +101,16 @@
 				gap: 0.5rem;
 			}
 
-			//.Page-section-title {
-			//	margin-top: 2em;
-			//}
-			//
-			//.Page-Socials {
-			//	width: 10rem;
-			//	display: flex;
-			//	flex-direction: column;
-			//	align-items: stretch;
-			//	gap: 0.6rem;
-			//}
-			//
-			//.Note {
-			//	background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
-			//	color: white;
-			//	border-left: 0.2em solid #224071;
-			//	padding: 1rem;
-			//}
-			//
-			//.References {
-			//	display: flex;
-			//	flex-direction: column;
-			//	align-items: center;
-			//	width: 100%;
-			//	max-width: var(--max-content-width);
-			//	gap: 01rem;
-			//}
+			// .Page-section-title {
+			// 	margin-top: 2em;
+			// }
+
+			// .Note {
+			// 	background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
+			// 	color: white;
+			// 	border-left: 0.2em solid #224071;
+			// 	padding: 1rem;
+			// }
 		}
 	}
 </style>

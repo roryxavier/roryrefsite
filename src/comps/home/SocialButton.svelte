@@ -7,11 +7,11 @@
 	export let target = '_blank';
 </script>
 
-<a class="SocialButton" {href} {target} rel="noopener noreferrer">
+<a class="SocialButton w-full" {href} {target} rel="noopener noreferrer">
 	{#if typeof icon === 'string' && icon.trim().length}
-		<img class="SocialButton-icon" src={icon} alt={`Icon ${title}`} />
+		<img class="w-4 h-4 object-cover" src={icon} alt={`Icon ${title}`} />
 	{/if}
-	<span class="SocialButton-title">{title}</span></a
+	<span class="grow text-start text-base font-bold leading-4">{title}</span></a
 >
 
 <style lang="scss">
@@ -20,22 +20,17 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		gap: 0.4rem;
+
 		transition: all 0.2s;
-		border-radius: 0.3rem;
+		background: hsla(0, 0%, 100%, 0.5);
+		gap: 0.4rem;
+		padding: 0.8rem;
+		padding: 0.8rem 1.2rem;
+		border-radius: 0.8rem;
 
 		&:hover {
-			transform: translateY(-0.2rem);
-		}
-
-		.SocialButton-icon {
-			width: 1em;
-			height: 1em;
-			object-fit: cover;
-		}
-		.SocialButton-title {
-			flex-grow: 1;
-			text-align: start;
+			transform: translateY(-1px);
+			background: hsla(0, 0%, 100%, 0.6);
 		}
 	}
 </style>
