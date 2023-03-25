@@ -68,7 +68,7 @@
 </div>
 
 <style lang="scss">
-	// .Page-header { 
+	// .Page-header {
 	// 	gap: 1rem;
 	// 	@media (min-width: 520px) {
 	// 		flex-direction: row;
