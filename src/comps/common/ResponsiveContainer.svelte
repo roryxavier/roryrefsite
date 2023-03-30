@@ -1,6 +1,7 @@
 <div class="section">
 	<div class="h-10" />
 	<slot />
+	<div class="h-5" />
 </div>
 
 <style>
