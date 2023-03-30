@@ -2,15 +2,12 @@
 	import badge from '../assets/badge.webp';
 	import globalVars from '../vars/GlobalVars';
 	import ReferenceButton from '../comps/home/Reference-Button.svelte';
-	// import SfwToggle from '../comps/home/SFW-Toggle.svelte';
+
 	import SocialButton from '../comps/home/SocialButton.svelte';
 	import Fursonas from '../vars/Fursonas';
 	import CardText from '../comps/common/CardText.svelte';
+	import SectionTitle from '../comps/common/SectionTitle.svelte';
 
-	// const referenceAvailability = {
-	// 	sfw: true,
-	// 	nsfw: false
-	// };
 	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
 </script>
 
@@ -20,25 +17,6 @@
 			<img alt="Rory Badge" src={badge} class="md:w-60 w-40 rounded-3xl" />
 			<span class="text-center font-bold text-3xl text-blue-500">Rory Here!</span>
 			<span class="text-center text-lg">24 | He/Him</span>
-		</div>
-
-		<div class="flex flex-col gap-2">
-			<img src={roryInfo.ref_link + '?width=1000'} alt="Rory Chris RefSheet" style="width: 120%;" />
-			<span class="text-base text-center">
-				art by <a
-					class="text-blue-600"
-					href="https://twitter.com/valdithzam"
-					target="_blank"
-					rel="noreferrer">@valdithzam</a
-				>
-			</span>
-
-			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
-				<ReferenceButton
-					title="Download Refsheet ⬇"
-					onClick={() => window.open(roryInfo.ref_link, '_blank')}
-				/>
-			</div>
 		</div>
 
 		<div class="flex flex-col gap-2">
@@ -64,11 +42,25 @@
 			number 0.x.x in the footer. I am actively updating and refining the site, adding more information
 			and details. If you encounter any issues, please do not hesitate to bring them to my attention.
 		</CardText>
+
+		<div class="flex flex-col gap-2">
+			<h1 class="text-4xl mb-3" id="ref_sheet_dl">Complete RefSheet</h1>
+			<p>
+				Just here to fetch the ref sheet? Click the button with the ref sheet you need and get
+				started!
+			</p>
+			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
+				<ReferenceButton
+					title="Download Refsheet (4.7) ⬇"
+					onClick={() => window.open(roryInfo.ref_link, '_blank')}
+				/>
+			</div>
+		</div>
 	</main>
 </div>
 
 <style lang="scss">
-	// .Page-header { 
+	// .Page-header {
 	// 	gap: 1rem;
 	// 	@media (min-width: 520px) {
 	// 		flex-direction: row;

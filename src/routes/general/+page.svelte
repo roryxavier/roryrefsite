@@ -1,23 +1,21 @@
 <script>
-	// import UnderConstruction from '../../../comps/UnderConstruction.svelte';
 	import ResponsiveContainer from '../../comps/common/ResponsiveContainer.svelte';
 	import Fursonas from '../../vars/Fursonas';
-	import TableTitle from './Table-Title.svelte';
-	import TableRow from './Table-Row.svelte';
+	import SectionTitle from '../../comps/common/SectionTitle.svelte';
+	import TableRow from '../../comps/common/TableRow.svelte';
 	import DropDownCard from '../../comps/common/DropDownCard.svelte';
 	import * as quickFacts from '../../vars/Quickfact';
 
-	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
+	const currSona = 'Rory Chris';
 
-	// Test if it last element
-	let isLast = (a, index) => index === a.length - 1;
+	const roryInfo = Fursonas.find((fur) => fur.name === currSona);
 </script>
 
 <main>
 	<ResponsiveContainer>
 		<div class="Section">
 			{#if roryInfo}
-				<TableTitle title="General" />
+				<SectionTitle title="General" id_tag="general" />
 				<table class="w-full table-fixed" style="border-bottom: 1px solid indigo">
 					<TableRow key="Key" value="Value" isTitle={true} />
 					{#each roryInfo.generalProperties as property}
@@ -28,10 +26,10 @@
 		</div>
 
 		<div class="Section">
-			<TableTitle title="Personality" id_tag="personality" />
+			<SectionTitle title="Personality" id_tag="personality" />
 
 			<DropDownCard title="QuickFacts">
-				<div class="grid md:grid-cols-2 sm:grid-cols-1">
+				<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
 					{#each quickFacts.Personality as quick}
 						<li>{quick}</li>
 					{/each}
@@ -63,7 +61,7 @@
 				</p>
 			</div>
 
-			<TableTitle title="Hobbies" id_tag="hobbies" />
+			<SectionTitle title="Hobbies" id_tag="hobbies" />
 			<DropDownCard title="QuickFacts">
 				<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
 					{#each quickFacts.Hobbies as quick}
@@ -99,7 +97,7 @@
 					Rory. One food he dislikes is fish, and he will go out of his way to avoid it.
 				</p>
 
-				<TableTitle title="Food & Drinks" id_tag="food_drinks" />
+				<SectionTitle title="Food & Drinks" id_tag="food_drinks" />
 				<DropDownCard title="QuickFacts">
 					<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
 						{#each quickFacts.FoodDrinks as quick}
