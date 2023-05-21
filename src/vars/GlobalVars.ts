@@ -16,7 +16,7 @@ export default {
 	],
 	socialLink: [
 		{
-			icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg',
+			icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/150px-Logo_of_Twitter.svg.png',
 			title: 'Twitter',
 			href: 'https://twitter.com/rory_xavi'
 		},
