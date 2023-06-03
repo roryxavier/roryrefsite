@@ -51,7 +51,7 @@
 			</p>
 			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
 				<ReferenceButton
-					title="Download Refsheet (4.7) ⬇"
+					title="Download Refsheet (4.7MB) ⬇"
 					onClick={() => window.open(roryInfo.ref_link, '_blank')}
 				/>
 			</div>

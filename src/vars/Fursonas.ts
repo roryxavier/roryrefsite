@@ -3,7 +3,7 @@ import Fursona from '../model/Fursona';
 const list: Fursona[] = [
 	new Fursona(
 		'Rory Chris',
-		'https://api.freshnet.app/res/background/rory_chris_refsheet.png',
+		'https://res.freshnet.app/background/rory_chris_refsheet.png',
 		1998,
 		'#TODO',
 		[

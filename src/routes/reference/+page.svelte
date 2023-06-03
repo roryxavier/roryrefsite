@@ -3,7 +3,7 @@
 	import Fursonas from '../../vars/Fursonas';
 	import SectionTitle from '../../comps/common/SectionTitle.svelte';
 
-	import TableRow from '../../comps/common/TableRow.svelte';
+	import ReferenceButton from '../../comps/home/Reference-Button.svelte';
 	import TableColour from './TableColour.svelte';
 
 	const currSona = 'Rory Chris';
@@ -25,6 +25,13 @@
 					rel="noreferrer">@valdithzam</a
 				></span
 			>
+			<div class="h-1.5"></div>
+			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
+				<ReferenceButton
+					title="Download Refsheet (4.7MB) ⬇"
+					onClick={() => window.open(roryInfo.ref_link, '_blank')}
+				/>
+			</div>
 		</div>
 		<SectionTitle title="Colour Palette" id_tag="colour_palette" />
 		<TableColour />
