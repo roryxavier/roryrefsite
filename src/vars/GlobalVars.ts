@@ -1,15 +1,13 @@
 import RouteInfo from '../model/RouteInfo';
 
 export default {
-	version: '0.4.5',
+	version: '0.5.0',
 	pageMetaData: {
 		copyWriteName: 'Rory Xavier',
-		dateUpdated: '12 December',
-		yearUpdated: '2023',
-		commitHash: '463057b'
+		yearUpdated: '2023'
 	},
 	navigationsLinks: [
-		new RouteInfo('Home', '/', 'Hello Rory!'),
+		new RouteInfo('Home', '/', 'Rory Reference Website'),
 		new RouteInfo('General', '/general', 'Rory - General'),
 		new RouteInfo('Reference', '/reference', 'Rory - Reference'),
 		new RouteInfo('Clothing', '/clothing', 'Rory - Clothing')
