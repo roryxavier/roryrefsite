@@ -1,7 +1,7 @@
 import RouteInfo from '../model/RouteInfo';
 
 export default {
-	version: '0.5.0',
+	version: '0.7.0',
 	pageMetaData: {
 		copyWriteName: 'Rory Xavier',
 		yearUpdated: '2023'

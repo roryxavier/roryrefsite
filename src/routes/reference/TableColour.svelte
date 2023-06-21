@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ColorBar from './ColorBar.svelte';
+
 	const body_parts = [
 		'Main Body Part',
 		'Hair Soft Colour',
@@ -29,57 +31,66 @@
 	];
 </script>
 
-<table class="w-full table-fixed" style="border-bottom: 1px solid indigo">
+<table class="w-full flex flex-col gap-0.5" style="border-bottom: 1px solid indigo">
 	<div class="Row Row-title">
-		<th class="Row-key">Body Parts</th>
-		<th class="Row-key">Value</th>
-		<th class="Row-key">Colour</th>
+		<th>Body Parts</th>
+		<th class="Row-title-color">Colour</th>
 	</div>
 	{#each Array(body_parts.length) as _, i}
 		<tr class="Row Row-content">
-			<td class="Row-key">{body_parts[i]}</td>
-			<td class="Row-key">{colour_value[i].toUpperCase()}</td>
-			<td class="Row-key" style="padding: 0"
-				><div class="h-full p-0" style="background-color: {colour_value[i]};" /></td
-			>
+			<td>{body_parts[i]}</td>
+			<td style="padding: 0">
+				<ColorBar hexColor={colour_value[i]} />
+			</td>
 		</tr>
 	{/each}
 </table>
 
 <style lang="scss">
 	.Row {
+		width: 100%;
 		display: flex;
 		flex-direction: row;
-		justify-content: stretch;
+		justify-content: space-between;
 		gap: 2rem;
 
 		& > * {
-			width: 100%;
-			flex-grow: 1;
 			padding: 0.3rem;
 		}
 
-		.Row-key {
-			text-align: end;
-		}
-
-		.Row-value {
+		&:nth-child(0) {
+			width: 100%;
 			text-align: start;
+			flex-grow: 1;
+		}
+		&:nth-child(1) {
+			width: 100%;
+			text-align: start;
+			flex-grow: 0;
 		}
 	}
 
 	.Row-title {
 		font-weight: 800;
 		border: 1px solid indigo;
+		border: 1px solid black; // align with theme
 		border-left: none;
 		border-right: none;
-	}
+		padding: 0.2rem;
 
+		.Row-title-color {
+			width: 8rem;
+			min-width: 8rem;
+			text-align: center;
+		}
+	}
 	.Row-content {
 		transition: 200ms;
+		padding: 0.2rem;
+		border-radius: 0.5rem;
 
 		&:hover {
-			background-color: rgba(0, 0, 0, 0.2);
+			background-color: rgba(0, 0, 0, 0.1);
 		}
 	}
 </style>
