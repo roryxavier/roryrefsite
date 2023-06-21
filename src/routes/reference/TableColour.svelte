@@ -34,7 +34,7 @@
 <table class="w-full flex flex-col gap-0.5" style="border-bottom: 1px solid indigo">
 	<div class="Row Row-title">
 		<th>Body Parts</th>
-		<th>Colour</th>
+		<th class="Row-title-color">Colour</th>
 	</div>
 	{#each Array(body_parts.length) as _, i}
 		<tr class="Row Row-content">
@@ -77,6 +77,12 @@
 		border-left: none;
 		border-right: none;
 		padding: 0.2rem;
+
+		.Row-title-color {
+			width: 8rem;
+			min-width: 8rem;
+			text-align: center;
+		}
 	}
 	.Row-content {
 		transition: 200ms;
