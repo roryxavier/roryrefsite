@@ -25,7 +25,7 @@
 					rel="noreferrer">@valdithzam</a
 				></span
 			>
-			<div class="h-1.5"></div>
+			<div class="h-1.5" />
 			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
 				<ReferenceButton
 					title="Download Refsheet (4.7MB) ⬇"
