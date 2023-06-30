@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import ICON_ARROW from '../../assets/arrow_224071.svg';
 
-	export let title;
+	export let title: string = '';
 	export let isExpand = false;
 </script>
 
@@ -10,7 +10,7 @@
 	isExpand={`${isExpand}`}
 >
 	<button
-		class="header w-full p-4 flex flex-row items-center justify-between gap-5 text-start"
+		class="header w-full p-6 flex flex-row items-center justify-between gap-5 text-start"
 		on:click={() => (isExpand = !isExpand)}
 	>
 		<h3 class="grow text-white text-lg font-bold">{title}</h3>
@@ -18,7 +18,9 @@
 	</button>
 
 	<div class="content">
-		<slot />
+		<div class="content-body">
+			<slot />
+		</div>
 	</div>
 </div>
 
@@ -35,22 +37,31 @@
 		}
 
 		.content {
-			color: white;
-			padding: 20px;
-			border-top: solid #fef08a;
+			display: grid;
 			transition: all 0.2s;
+
+			.content-body {
+				transition: all 0.2s;
+				overflow: hidden;
+				padding: 1.5rem;
+
+				color: white;
+				border-top: solid #fef08a;
+			}
 		}
 	}
 
 	.DropDownCard[isExpand='true'] {
 		.content {
-			opacity: 1;
-			pointer-events: initial;
-			border-top-width: 4px;
+			grid-template-rows: 1fr;
 
-			height: max-content;
-			padding-top: 20px;
-			padding-bottom: 20px;
+			.content-body {
+				opacity: 1;
+				border-top-width: 4px;
+
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+			}
 		}
 	}
 	.DropDownCard[isExpand='false'] {
@@ -60,14 +71,16 @@
 			}
 		}
 		.content {
-			opacity: 0;
-			pointer-events: none;
-			border-width: 0;
-			border-top-width: 0;
+			grid-template-rows: 0fr;
 
-			height: 0;
-			padding-top: 0;
-			padding-bottom: 0;
+			.content-body {
+				opacity: 0;
+				border-width: 0;
+				border-top-width: 0;
+
+				padding-top: 0;
+				padding-bottom: 0;
+			}
 		}
 	}
 </style>

@@ -16,7 +16,9 @@
 		<div class="Page-header flex flex-col items-center gap-1">
 			<img alt="Rory Badge" src={badge} class="md:w-60 w-40 rounded-3xl" />
 			<span class="text-center font-bold text-3xl text-blue-500">Rory Here!</span>
-			<span class="text-center text-lg">24 | He/Him</span>
+			<span class="text-center text-lg flex flex-row items-center gap-1.5"
+				>24<span style="font-size: 0.7em; padding-top: 0.2em">|</span>He/Him</span
+			>
 		</div>
 
 		<div class="flex flex-col gap-2">
@@ -44,8 +46,8 @@
 		</CardText>
 
 		<div class="flex flex-col gap-2">
-			<h1 class="text-4xl mb-3" id="ref_sheet_dl">Complete RefSheet</h1>
-			<p>
+			<h1 class="text-4xl" id="ref_sheet_dl">Complete RefSheet</h1>
+			<p class="mb-3">
 				Just here to fetch the ref sheet? Click the button with the ref sheet you need and get
 				started!
 			</p>
