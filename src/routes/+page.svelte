@@ -6,7 +6,6 @@
 	import SocialButton from '../comps/home/SocialButton.svelte';
 	import Fursonas from '../vars/Fursonas';
 	import CardText from '../comps/common/CardText.svelte';
-	import SectionTitle from '../comps/common/SectionTitle.svelte';
 
 	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
 </script>
@@ -52,10 +51,12 @@
 				started!
 			</p>
 			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
-				<ReferenceButton
-					title="Download Refsheet (4.7MB) ⬇"
-					onClick={() => window.open(roryInfo.ref_link, '_blank')}
-				/>
+				{#if roryInfo}
+					<ReferenceButton
+						title="Download Refsheet (4.7MB) ⬇"
+						onClick={() => window.open(roryInfo.ref_link, '_blank')}
+					/>
+				{/if}
 			</div>
 		</div>
 	</main>

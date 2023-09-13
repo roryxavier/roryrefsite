@@ -1,5 +1,4 @@
 <script>
-	import Ribbon from './Ribbon.svelte';
 	import NavBar from '../header/NavBar.svelte';
 	import Footer from '../footer/Footer.svelte';
 
@@ -16,8 +15,6 @@
 	bind:this={app}
 	on:scroll={(e) => (navbar.isScrollDown = e.target.scrollTop > 4)}
 >
-	<Ribbon />
-
 	<NavBar bind:this={navbar} onItemSelected={() => (app.scrollTop = 0)} />
 
 	<div class="AppPage-container">
