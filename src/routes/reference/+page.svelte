@@ -17,7 +17,7 @@
 		{#if roryInfo}
 			<div class="flex flex-col space-y-0.5">
 				<img
-					src={roryInfo.ref_link + '?width=1000'}
+					src={roryInfo.ref_link_small ?? roryInfo.ref_link}
 					alt="Rory Chris RefSheet"
 					style="width: 120%; border-radius: 0.3em"
 				/>
