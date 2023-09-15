@@ -4,21 +4,28 @@
 	export let onClickIndex: (i: number) => void;
 </script>
 
-<div class="flex flex-row space-x-2">
-	{#each Array(length) as _, i}
-		{#if i === index}
-			<button>
-				<div class="pl-2 pr-2">
-					<div class="rounded-full bg-white w-7 h-4" />
-				</div>
-			</button>
-		{:else}
-			<button>
-				<div class="rounded-full bg-white w-4 h-4 opacity-50" on:click={() => onClickIndex(i)} />
-			</button>
-			<!--			w-40 h-20-->
-		{/if}
+<div class="indexes">
+	{#each new Array(length) as x, i}
+		<button
+			class="index"
+			style={i === index ? 'width: 2rem; background: white' : ''}
+			on:click={() => onClickIndex(i)}
+		/>
 	{/each}
 </div>
-<!--<div class='flex content-center'>-->
-<!--</div>-->
+
+<style scoped lang="scss">
+	.indexes {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+
+		& > * {
+			min-width: 1rem;
+			min-height: 1rem;
+			display: flex;
+			background: rgba(255, 255, 255, 0.5);
+			border-radius: 1rem;
+		}
+	}
+</style>

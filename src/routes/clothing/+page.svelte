@@ -36,12 +36,11 @@
 </script>
 
 <main>
-	<!-- <UnderConstruction /> -->
 	<ResponsiveContainer>
 		<div class="clothing-page">
 			<SectionTitle title="Clothing Styles" id_tag="cloth_style" />
 
-			<div class="flex flex-row space-x-3 items-center">
+			<div class="viewer">
 				<ArrowButton
 					direction="left"
 					onClick={() => {
@@ -49,11 +48,6 @@
 						galleryIndex = galleryIndex < 0 ? 0 : galleryIndex;
 					}}
 				/>
-				<!-- <ImageCard
-						title="Rory Xavier"
-						subtitle="Riding broom"
-						imageSrc="https://pbs.twimg.com/media/FqoTEC2akAAmXPz?format=jpg&name=4096x4096"
-					/> -->
 				<ImageCard title="Rory Xavier" subtitle="Riding broom" imageSrc={galleries[galleryIndex]} />
 				<ArrowButton
 					direction="right"
@@ -78,11 +72,21 @@
 	</ResponsiveContainer>
 </main>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.clothing-page {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		.viewer {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+		}
 	}
 </style>

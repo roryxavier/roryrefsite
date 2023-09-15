@@ -6,9 +6,12 @@
 
 <style>
 	.section {
+		width: 100%;
+		max-width: var(--max-content-width);
 		--pad-width: 1rem;
 		margin: auto;
 		padding: 0 var(--pad-width) 0 var(--pad-width);
-		max-width: var(--max-content-width);
+		display: flex;
+		flex-direction: column;
 	}
 </style>
