@@ -10,7 +10,8 @@ export default {
 		new RouteInfo('Home', '/', 'Rory Reference Website'),
 		new RouteInfo('General', '/general', 'Rory - General'),
 		new RouteInfo('Reference', '/reference', 'Rory - Reference'),
-		new RouteInfo('Clothing', '/clothing', 'Rory - Clothing')
+		// new RouteInfo('Clothing', '/clothing', 'Rory - Clothing'),
+		new RouteInfo('About Me', '/about', 'Rory - About Me')
 	],
 	socialLink: [
 		{
