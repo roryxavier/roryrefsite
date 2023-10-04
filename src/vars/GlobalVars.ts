@@ -1,7 +1,7 @@
 import RouteInfo from '../model/RouteInfo';
 
 export default {
-	version: '0.7.0',
+	version: '0.8.5',
 	pageMetaData: {
 		copyWriteName: 'Rory Xavier',
 		yearUpdated: '2023'
@@ -9,9 +9,9 @@ export default {
 	navigationsLinks: [
 		new RouteInfo('Home', '/', 'Rory Reference Website'),
 		new RouteInfo('General', '/general', 'Rory - General'),
-		new RouteInfo('Reference', '/reference', 'Rory - Reference'),
+		new RouteInfo('Reference', '/reference', 'Rory - Reference')
 		// new RouteInfo('Clothing', '/clothing', 'Rory - Clothing'),
-		new RouteInfo('About Me', '/about', 'Rory - About Me')
+		// new RouteInfo('About Me', '/about', 'Rory - About Me')
 	],
 	socialLink: [
 		{

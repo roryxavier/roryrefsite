@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
+	import UnderConstruction from '../../comps/UnderConstruction.svelte';
 
 	const galleries: string[] = []; // todo: add images into this array
 	let showCount = 0;
@@ -44,35 +45,36 @@
 </script>
 
 <div class="page-about">
-	<div class="ocs">
-		<div class="ocs-content">
-			<span class="ocs-title">My OCs!</span>
-			<p>These are all of my characters! More on the way</p>
-			<p>Swipe or Scroll to navigate, click for more info!</p>
-		</div>
+	<UnderConstruction />
+	<!--	<div class="ocs">-->
+	<!--		<div class="ocs-content">-->
+	<!--			<span class="ocs-title">My OCs!</span>-->
+	<!--			<p>These are all of my characters! More on the way</p>-->
+	<!--			<p>Swipe or Scroll to navigate, click for more info!</p>-->
+	<!--		</div>-->
 
-		{#if galleries.length > 0 && showCount > 0}
-			<div class="ocs-gallery" style={`--show-count: ${showCount}`}>
-				<div class="ocs-scroll" on:scroll={onScrollGallery}>
-					{#each galleries as gallery}
-						<img class="gallery" src={gallery} />
-					{/each}
-				</div>
+	<!--		{#if galleries.length > 0 && showCount > 0}-->
+	<!--			<div class="ocs-gallery" style={`&#45;&#45;show-count: ${showCount}`}>-->
+	<!--				<div class="ocs-scroll" on:scroll={onScrollGallery}>-->
+	<!--					{#each galleries as gallery}-->
+	<!--						<img class="gallery" src={gallery} />-->
+	<!--					{/each}-->
+	<!--				</div>-->
 
-				<div class="ocs-indexes">
-					{#if galleries.length - 1 >= showCount}
-						{#each new Array(galleries.length - showCount + 1) as x, index}
-							<button
-								class={`ocs-index-${index}`}
-								style={`background: ${currentIndex === index ? 'white' : '#00000066'}`}
-								on:click={() => onClickIndex(index)}
-							/>
-						{/each}
-					{/if}
-				</div>
-			</div>
-		{/if}
-	</div>
+	<!--				<div class="ocs-indexes">-->
+	<!--					{#if galleries.length - 1 >= showCount}-->
+	<!--						{#each new Array(galleries.length - showCount + 1) as x, index}-->
+	<!--							<button-->
+	<!--								class={`ocs-index-${index}`}-->
+	<!--								style={`background: ${currentIndex === index ? 'white' : '#00000066'}`}-->
+	<!--								on:click={() => onClickIndex(index)}-->
+	<!--							/>-->
+	<!--						{/each}-->
+	<!--					{/if}-->
+	<!--				</div>-->
+	<!--			</div>-->
+	<!--		{/if}-->
+	<!--	</div>-->
 </div>
 
 <style scoped lang="scss">

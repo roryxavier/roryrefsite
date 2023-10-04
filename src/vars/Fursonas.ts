@@ -1,12 +1,10 @@
 import Fursona from '../model/Fursona';
-import RoryXavierImage from '../assets/rory_xavier_w1000.png';
 
 const list: Fursona[] = [
 	new Fursona({
 		name: 'Rory Chris',
-		ref_link_small: RoryXavierImage,
-		ref_link:
-			'https://d.furaffinity.net/art/roryxavier/1617167004/1617167004.roryxavier_rory_chris_2_0_ref_sheet_by_valdith_zam.jpg',
+		ref_link_small: 'https://res.jfrx.cf/ref/rory/rory-ref-20230308.png?width=1000',
+		ref_link: 'https://res.jfrx.cf/ref/rory/rory-ref-20230308.png',
 		year_born: 1998,
 		icon: '#TODO',
 		bioKV: [
