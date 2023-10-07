@@ -7,7 +7,7 @@
 <style>
 	.section {
 		width: 100%;
-		max-width: var(--max-content-width);
+		max-width: var(--content-max-width);
 		--pad-width: 1rem;
 		margin: auto;
 		padding: 0 var(--pad-width) 0 var(--pad-width);

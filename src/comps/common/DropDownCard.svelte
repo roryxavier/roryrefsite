@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ICON_ARROW from '../../assets/arrow_224071.svg';
+	import ICON_ARROW from '../../assets/icon/arrow_down_224071.svg';
 
 	export let title: string = '';
 	export let isExpand = false;

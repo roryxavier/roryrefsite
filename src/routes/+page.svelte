@@ -1,5 +1,4 @@
 <script>
-	import badge from '../assets/badge.webp';
 	import globalVars from '../vars/GlobalVars';
 	import ReferenceButton from '../comps/home/Reference-Button.svelte';
 
@@ -11,13 +10,15 @@
 </script>
 
 <div class="Page">
-	<main class="Page-body flex flex-col gap-12">
+	<main class="gap-12">
 		<div class="Page-header flex flex-col items-center gap-1">
-			<img alt="Rory Badge" src={badge} class="md:w-60 w-40 rounded-3xl" />
+			<div style="width: var(--badge-width); height: var(--badge-height)" />
 			<span class="text-center font-bold text-3xl text-blue-500">Rory Here!</span>
-			<span class="text-center text-lg flex flex-row items-center gap-1.5"
-				>24<span style="font-size: 0.7em; padding-top: 0.2em">|</span>He/Him</span
-			>
+			<span class="text-center text-lg flex flex-row items-center gap-1.5">
+				25
+				<span style="font-size: 0.7em; padding-top: 0.2em">|</span>
+				He/Him
+			</span>
 		</div>
 
 		<div class="flex flex-col gap-2">
@@ -63,24 +64,9 @@
 </div>
 
 <style lang="scss">
-	// .Page-header {
-	// 	gap: 1rem;
-	// 	@media (min-width: 520px) {
-	// 		flex-direction: row;
-	// 		gap: 2rem;
-	// 	}
-
-	// 	& > * {
-	// 		& > * {
-	// 			line-height: 1em;
-	// 			margin: 0.2rem 0;
-	// 		}
-	// 	}
-	// }
-
 	.Page {
-		main {
-			max-width: var(--max-content-width);
+		& > main {
+			max-width: var(--content-max-width);
 			display: flex;
 			flex-direction: column;
 			align-items: stretch;
@@ -95,17 +81,6 @@
 				padding: 2rem;
 				gap: 0.5rem;
 			}
-
-			// .Page-section-title {
-			// 	margin-top: 2em;
-			// }
-
-			// .Note {
-			// 	background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.4), transparent);
-			// 	color: white;
-			// 	border-left: 0.2em solid #224071;
-			// 	padding: 1rem;
-			// }
 		}
 	}
 </style>

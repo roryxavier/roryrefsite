@@ -1,30 +1,73 @@
 <script lang="ts">
-	import NavBar from '../header/NavBar.svelte';
-	import Footer from '../footer/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { navigating } from '$app/stores';
+	import NavBar from '../header/NavBar.svelte';
+	import Footer from '../footer/Footer.svelte';
+	import Badge from './Badge.svelte';
+	import globalVars from '../../vars/GlobalVars';
+	import { invalidate } from '$app/navigation';
+
+	const { navigationsLinks } = globalVars;
 
 	$: if ($navigating) onRouteChange();
 
 	let navbar: typeof NavBar;
 	let app: HTMLDivElement;
+	let badge: typeof Badge;
 
 	let backgroundShow = false;
 	let appShow = false;
 	let containerShow = false;
+	let scrollTop = 0;
+	let isBadgeCollapse = false;
+	let isNavExpand = false;
 
+	// event
 	const onRouteChange = () => {
 		containerShow = false;
 
 		setTimeout(() => {
 			containerShow = true;
+			invalidateBadge();
 		}, 200);
 	};
+	const onScroll = () => {
+		scrollTop = app.scrollTop;
 
+		invalidateBadge();
+	};
+	const onNavigationSelect = () => {
+		app.scrollTop = 0;
+	};
+	const onNavigationExpand = (expand: boolean) => {
+		isNavExpand = expand;
+		invalidateBadge();
+	};
+
+	// invalidate
+	const invalidateBadge = () => {
+		if (isNavExpand) {
+			isBadgeCollapse = true;
+			return;
+		}
+
+		const pathname = window.location.pathname;
+		const item = navigationsLinks.find((navigationsLink) => navigationsLink.path === pathname);
+		if (item) {
+			if (item.path === '/') {
+				isBadgeCollapse = scrollTop > 4;
+			} else {
+				isBadgeCollapse = true;
+			}
+		}
+	};
+
+	// on
 	onMount(() => {
 		backgroundShow = true;
 		appShow = true;
-		containerShow = true;
+		onRouteChange();
+		window.addEventListener('popstate', () => onRouteChange());
 	});
 </script>
 
@@ -32,41 +75,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
 </svelte:head>
 
-<div class="background background-{backgroundShow}" />
-
-<div
-	class="AppPage AppPage-{appShow}"
-	bind:this={app}
-	on:scroll={(e) => (navbar.isScrollDown = e.target.scrollTop > 4)}
->
-	<NavBar bind:this={navbar} onItemSelected={() => (app.scrollTop = 0)} />
-
-	<div class="AppPage-container AppPage-container-{containerShow}">
+<div class="AppPage AppPage-{appShow}" bind:this={app} on:scroll={onScroll}>
+	<div class="background background-{backgroundShow}" style="z-index: 1" />
+	<NavBar onItemSelected={onNavigationSelect} onExpand={onNavigationExpand} {isBadgeCollapse} />
+	<Badge isCollapse={isBadgeCollapse} />
+	<div class="AppPage-container AppPage-container-{containerShow}" style="z-index: 2">
 		<slot />
 	</div>
-
 	<Footer />
 </div>
 
 <style lang="scss">
-	* {
+	*,
+	*::before,
+	*::after {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-	}
-	.background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: calc(100dvh + 10rem);
-		width: 100vw;
-		background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-
-		transition: all 1000ms ease;
-		opacity: 0;
-	}
-	.background-true {
-		opacity: 1;
 	}
 
 	:root {
@@ -96,30 +121,59 @@
 			font-size: 22px;
 		}
 	}
-	body {
-		position: relative;
-		max-width: 30rem;
+
+	.background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: calc(100dvh + 10rem);
+		width: 100vw;
+		background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+		transition: opacity 1000ms ease;
+		opacity: 0;
+	}
+	.background-true {
+		opacity: 1;
 	}
 
+	// global variable
+	.AppPage {
+		--navbar-height: 5rem;
+		--footer-height: 5rem;
+		--content-max-width: 48rem;
+		--badge-width: 10rem;
+		--badge-height: 10rem;
+	}
 	.AppPage {
 		font-family: Dosis, sans-serif;
+		position: relative;
 
 		background-attachment: fixed;
 		background-size: cover;
 
-		--max-content-width: 48rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
-		min-height: calc(100dvh + 10rem);
-		height: max-content;
+		height: 100dvh;
+		min-height: 100dvh;
+		max-height: 100dvh;
 		width: 100%;
+
 		position: relative;
 		transition: all 400ms ease;
 		opacity: 0;
 
+		overflow-y: auto;
+
 		.AppPage-container {
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
 			z-index: 1;
 			flex-grow: 1;
 			transition: all 200ms ease;

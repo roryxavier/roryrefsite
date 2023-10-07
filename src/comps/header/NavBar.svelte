@@ -2,14 +2,15 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import badge from '../../assets/badge.webp';
-	import ICON_ARROW from '../../assets/arrow_224071.svg';
+	import ICON_ARROW from '../../assets/icon/arrow_down_224071.svg';
 	import globalVars from '../../vars/GlobalVars';
 	import NavBarItems from './NavBar-Items.svelte';
 	import type RouteInfo from '../../model/RouteInfo';
 
 	export let isScrollDown = false;
 	export let onItemSelected = (item: RouteInfo) => {};
+	export let onExpand = (expand: boolean) => {};
+	export let isBadgeCollapse: boolean;
 
 	// constant
 	const { navigationsLinks } = globalVars;
@@ -26,11 +27,18 @@
 		title = item.title;
 		header = item.header;
 		onItemSelected(item);
+		setTimeout(() => {
+			onExpand(isExpand);
+		}, 400);
 	};
 	const invalidateTitle = () => {
 		pathname = window.location.pathname;
 		const item = navigationsLinks.find((navigationsLink) => navigationsLink.path === pathname);
 		if (item) invalidateItem(item);
+	};
+	const toggleExpand = () => {
+		isExpand = !isExpand;
+		onExpand(isExpand);
 	};
 
 	// lifecycles
@@ -45,20 +53,25 @@
 </svelte:head>
 
 <div class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
-	<nav class="NavBar-bar {isExpand ? 'NavBar-bar-isExpand' : 'NavBar-bar-isCollapsed'}">
-		<a class="NavBar-logo" href="/">
-			<img class="NavBar-logo-icon" src={badge} alt="Page Logo" />
-		</a>
+	<nav
+		class="
+			NavBar-bar 
+			{isExpand ? 'NavBar-bar-isExpand' : 'NavBar-bar-isCollapsed'}  
+			{isBadgeCollapse ? '' : 'NavBar-bar-badgeCollapse'}
+		"
+	>
+		<!-- svelte-ignore a11y-missing-content -->
+		<a class="NavBar-logo" style="grid-area: logo" href="/" on:click={() => invalidateTitle()} />
 
-		<span class="NavBar-title">{title}</span>
-		<div class="NavBar-items">
+		<span class="NavBar-title" style="grid-area: title">{title}</span>
+		<div class="NavBar-items" style="grid-area: items">
 			<NavBarItems onClickItem={(item) => invalidateItem(item)} />
 		</div>
 
 		<button
 			class="NavBar-toggle"
-			style={isExpand ? 'transform: rotate(180deg)' : ''}
-			on:click={() => (isExpand = !isExpand)}
+			style="grid-area: toggle; {isExpand ? 'transform: rotate(180deg)' : ''}"
+			on:click={toggleExpand}
 		>
 			<img class="NavBar-toggle-icon" src={ICON_ARROW} alt="Click to Expand" />
 		</button>
@@ -67,11 +80,11 @@
 
 <style lang="scss">
 	.NavBar {
-		--height: 5rem;
+		--height: var(--navbar-height);
 		height: var(--height);
 
 		width: 100%;
-		z-index: 2;
+		z-index: 3;
 		position: sticky;
 		top: 0;
 		left: 0;
@@ -91,36 +104,12 @@
 			display: grid;
 
 			.NavBar-logo {
-				grid-area: logo;
-			}
-
-			.NavBar-title {
-				grid-area: title;
-			}
-
-			.NavBar-items {
-				grid-area: items;
-			}
-
-			.NavBar-toggle {
-				grid-area: toggle;
-			}
-
-			.NavBar-logo {
 				--size: var(--height);
 				width: var(--size);
 				height: var(--size);
-				border-radius: 50%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-
-				.NavBar-logo-icon {
-					--icon-size: calc(var(--size) - 2rem);
-					width: var(--icon-size);
-					height: var(--icon-size);
-					border-radius: inherit;
-				}
 			}
 
 			.NavBar-title {
@@ -143,7 +132,7 @@
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				justify-content: flex-end;
+				justify-content: flex-start;
 				flex-wrap: nowrap;
 
 				padding: 1.5rem 2rem 1.5rem 0.5rem;
@@ -184,13 +173,16 @@
 			}
 
 			.NavBar-toggle {
-				--margin: 0.5rem;
-				--size: calc(var(--height) - var(--margin) - var(--margin));
+				--margin: 0;
+				--size: var(--height);
 				width: var(--size);
 				height: var(--size);
-				margin: var(--margin) calc(var(--margin) * 2) var(--margin) 0;
 				transition: 300ms;
 				border-radius: 50%;
+
+				display: grid;
+				place-items: center;
+
 				-webkit-tap-highlight-color: transparent;
 
 				&:hover {
@@ -206,8 +198,8 @@
 				}
 
 				.NavBar-toggle-icon {
-					width: var(--size);
-					height: var(--size);
+					width: calc(var(--size) * 0.8);
+					height: calc(var(--size) * 0.8);
 					padding: 1.4rem;
 					transition: 300ms;
 					border-radius: 50%;
@@ -217,7 +209,7 @@
 	}
 
 	// when small
-	@media (max-width: 450px) {
+	@media (max-width: 500px) {
 		.NavBar {
 			.NavBar-bar {
 				grid-template-columns: var(--height) 1fr calc(var(--height));
@@ -250,6 +242,13 @@
 					justify-content: flex-start;
 				}
 			}
+			.NavBar-bar-badgeCollapse {
+				grid-template-columns: 0 1fr calc(var(--height));
+				padding-left: 1.5rem;
+				.NavBar-logo {
+					width: 0;
+				}
+			}
 
 			.NavBar-bar-isExpand {
 				height: 100dvh;
@@ -276,7 +275,7 @@
 	}
 
 	// when big
-	@media (min-width: 451px) {
+	@media (min-width: 501px) {
 		.NavBar {
 			display: flex;
 			flex-direction: column;
@@ -302,10 +301,17 @@
 					display: none;
 				}
 			}
+			.NavBar-bar-badgeCollapse {
+				grid-template-columns: 0 1fr;
+				padding-left: 1rem;
+				.NavBar-logo {
+					width: 0;
+				}
+			}
 		}
 		.NavBar-isScrolledUp {
 			.NavBar-bar {
-				width: var(--max-content-width);
+				width: var(--content-max-width);
 				max-width: calc(100% - var(--margin) - var(--margin));
 				margin: var(--margin);
 				margin-bottom: 0;
