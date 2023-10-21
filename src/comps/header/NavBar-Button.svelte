@@ -38,6 +38,7 @@
 
 <style scoped lang="scss">
 	.NavBarButton {
+		min-width: max-content;
 		color: #224071;
 		transition: all 0.2s;
 		font-size: 1rem;

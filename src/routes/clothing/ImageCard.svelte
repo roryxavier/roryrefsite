@@ -1,15 +1,14 @@
 <script lang="ts">
-	export let title: string = '';
-	export let subtitle: string = '';
-	export let imageSrc: string = '';
+	import type { Gallery } from './Gallery';
+
+	export let gallery: Gallery;
 </script>
 
 <div class="image-card">
-	<img src={imageSrc} alt="alt" />
-
+	<img src={gallery.image} alt={gallery.subtitle} />
 	<div>
-		<span>{subtitle}</span>
-		<span>{title}</span>
+		<span>{gallery.subtitle}</span>
+		<span>{gallery.title}</span>
 	</div>
 </div>
 

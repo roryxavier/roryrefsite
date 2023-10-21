@@ -74,11 +74,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
 </svelte:head>
 
-<div class="AppPage AppPage-{appShow}" bind:this={app} on:scroll={onScroll}>
-	<div class="background background-{backgroundShow}" style="z-index: 1" />
+<div class="background background-{backgroundShow}" style="z-index: 1" />
+<div
+	class="AppPage-body AppPage-body-{appShow}"
+	style="z-index: 2;"
+	bind:this={app}
+	on:scroll={onScroll}
+>
 	<NavBar onItemSelected={onNavigationSelect} onExpand={onNavigationExpand} {isBadgeCollapse} />
 	<Badge isCollapse={isBadgeCollapse} />
-	<div class="AppPage-container AppPage-container-{containerShow}" style="z-index: 2">
+	<div class="AppPage-body-container AppPage-body-container-{containerShow}" style="z-index: 2">
 		<slot />
 	</div>
 	<Footer />
@@ -122,10 +127,10 @@
 	}
 
 	.background {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
-		height: calc(100dvh + 10rem);
+		height: calc(100dvh);
 		width: 100vw;
 		background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 
@@ -137,14 +142,14 @@
 	}
 
 	// global variable
-	.AppPage {
+	.AppPage-body {
 		--navbar-height: 5rem;
 		--footer-height: 5rem;
 		--content-max-width: 48rem;
 		--badge-width: 10rem;
 		--badge-height: 10rem;
 	}
-	.AppPage {
+	.AppPage-body {
 		font-family: Dosis, sans-serif;
 		position: relative;
 
@@ -166,7 +171,7 @@
 
 		overflow-y: auto;
 
-		.AppPage-container {
+		.AppPage-body-container {
 			width: 100%;
 
 			display: flex;
@@ -178,11 +183,11 @@
 			transition: all 200ms ease;
 			transform: translateY(-0.5rem);
 		}
-		.AppPage-container-true {
+		.AppPage-body-container-true {
 			transform: translateY(0);
 		}
 	}
-	.AppPage-true {
+	.AppPage-body-true {
 		opacity: 1;
 	}
 </style>

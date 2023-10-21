@@ -1,56 +1,35 @@
 <script lang="ts">
-	import ArrowButton from './ArrowButton.svelte';
-	import SectionTitle from '@/comps/common/SectionTitle.svelte';
 	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
 	import ImageCard from './ImageCard.svelte';
-	import GalleryNavigator from './GalleryNavigator.svelte';
+	import { Gallery } from './Gallery';
 
-	const galleries: string[] = [];
-	let galleryIndex = 0;
+	const galleries: Gallery[] = [
+		new Gallery('https://pbs.twimg.com/media/FzH5yEOaMAATs0W?format=jpg&name=small', {
+			subtitle: 'Cuddling boyfriend',
+		}),
+		new Gallery('https://pbs.twimg.com/media/Fxl6muQaUAA3EJR?format=jpg&name=small', {
+			title: 'Rory Xavier',
+			subtitle: 'Pride!!',
+		}),
+		new Gallery('https://pbs.twimg.com/media/FWqriLcUUAEmz9a?format=jpg&name=small', {
+			title: 'Rory Xavier',
+			subtitle: "Who's this pokemon?",
+		}),
+		new Gallery('https://pbs.twimg.com/media/FWqqN_NVQAECp33?format=jpg&name=small', {
+			title: 'Rory Xavier',
+			subtitle: 'Why are you looking at me like that?',
+		}),
+	];
 </script>
 
 <main>
 	<ResponsiveContainer>
 		<div class="clothing-page">
-			<SectionTitle title="Clothing Styles" id_tag="cloth_style" />
-
-			{#if galleries.length}
-				<div class="viewer">
-					<ArrowButton
-						direction="left"
-						onClick={() => {
-							galleryIndex = galleryIndex - 1;
-							galleryIndex = galleryIndex < 0 ? 0 : galleryIndex;
-						}}
-					/>
-					<ImageCard
-						title="Rory Xavier"
-						subtitle="Riding broom"
-						imageSrc={galleries[galleryIndex]}
-					/>
-					<ArrowButton
-						direction="right"
-						onClick={() => {
-							galleryIndex = galleryIndex + 1;
-							galleryIndex =
-								galleryIndex > galleries.length - 1 ? galleries.length - 1 : galleryIndex;
-						}}
-					/>
-				</div>
-			{/if}
-			{#if galleries.length === 0}
-				<span>Nothing here</span>
-			{/if}
-
-			<div class="h-5" />
-
-			<GalleryNavigator
-				length={galleries.length}
-				index={galleryIndex}
-				onClickIndex={(index) => {
-					galleryIndex = index;
-				}}
-			/>
+			<div class="clothing-content">
+				{#each galleries as gallery}
+					<ImageCard {gallery} />
+				{/each}
+			</div>
 		</div>
 	</ResponsiveContainer>
 </main>
@@ -60,18 +39,20 @@
 		width: 100%;
 		max-width: var(--content-max-width);
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
-		.viewer {
-			width: 100%;
+		.clothing-content {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			gap: 0.5rem;
+			gap: 0.8em;
+
+			@media (min-width: 550px) {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+			}
+			& > * {
+				width: 100%;
+			}
 		}
 	}
 </style>

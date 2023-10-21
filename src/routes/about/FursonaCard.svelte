@@ -5,11 +5,13 @@
 </script>
 
 <div class="fursona-card">
-	<img
-		class="fursona-background fursona-absolute"
-		src={fursona.image}
-		alt={`${fursona.name} image`}
-	/>
+	{#if fursona.image !== undefined}
+		<img
+			class="fursona-background fursona-absolute"
+			src={fursona.image}
+			alt={`${fursona.name} image`}
+		/>
+	{/if}
 	<div class="fursona-foreground fursona-absolute" />
 	<div class="fursona-content">
 		<span class="fursona-species">{fursona.species}</span>
@@ -64,7 +66,7 @@
 			align-items: flex-start;
 			justify-content: flex-end;
 
-      font-size: 1.2rem;
+			font-size: 1.2rem;
 
 			.fursona-name {
 				color: white;

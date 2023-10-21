@@ -327,4 +327,10 @@
 			}
 		}
 	}
+
+	@media (min-width: 901px) {
+		.NavBar .NavBar-bar .NavBar-items {
+			justify-content: center;
+		}
+	}
 </style>

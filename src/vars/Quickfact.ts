@@ -10,5 +10,5 @@ export const FoodDrinks = [
 	'Spicy Food',
 	'Mac & Cheese',
 	'Paste/Ramen',
-	'Chocolate Milk'
+	'Chocolate Milk',
 ];

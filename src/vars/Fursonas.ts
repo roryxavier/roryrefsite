@@ -12,8 +12,8 @@ const list: Fursona[] = [
 			{ key: 'Date of Birth', value: 'September 14, 1998' },
 			{ key: 'Sex/Gender', value: 'Male ♂️' },
 			{ key: 'Height', value: '162 cm' },
-			{ key: 'Weight', value: '60 KG' }
-		]
+			{ key: 'Weight', value: '60 KG' },
+		],
 	}),
 	new Fursona({
 		name: 'Jimmy Fox',
@@ -23,9 +23,9 @@ const list: Fursona[] = [
 		bioKV: [
 			{ key: 'Full Name', value: 'Jimmy Chane' },
 			{ key: 'Date of Birth', value: 'November 12, 1997' },
-			{ key: 'Sex/Gender', value: 'Male' }
-		]
-	})
+			{ key: 'Sex/Gender', value: 'Male' },
+		],
+	}),
 ];
 
 export default list;

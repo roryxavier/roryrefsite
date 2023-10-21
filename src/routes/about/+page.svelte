@@ -2,7 +2,7 @@
 	import { Fursona } from './Fursona';
 	import FursonaCard from './FursonaCard.svelte';
 
-	const fursonas: Fursona[] = [];
+	const fursonas: Fursona[] = Fursona.list;
 </script>
 
 <div class="page-about">
@@ -11,10 +11,6 @@
 			<FursonaCard {fursona} />
 		{/each}
 	</div>
-
-	{#if fursonas.length === 0}
-		<span>Nothing here</span>
-	{/if}
 </div>
 
 <style scoped lang="scss">
@@ -37,7 +33,7 @@
 
 		@media (min-width: 300px) {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 		}
 	}
 </style>

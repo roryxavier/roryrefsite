@@ -13,7 +13,7 @@
 		'Eye outer colour',
 		'Eye Half Top Ring',
 		'Eye Half Bottom Ring',
-		'Eye Middle'
+		'Eye Middle',
 	];
 	const colour_value = [
 		'#6bc5fa',
@@ -27,7 +27,7 @@
 		'#fff4de',
 		'#5d9aeb',
 		'#7af9fe',
-		'#00024c'
+		'#00024c',
 	];
 </script>
 
