@@ -1,5 +1,5 @@
 <script lang="ts">
-	import globalVars from '../../vars/GlobalVars';
+	import globalVars from '@/vars/GlobalVars';
 </script>
 
 <div class="footer pt-4 pb-4 w-full text-center text-white bg-blue-800">

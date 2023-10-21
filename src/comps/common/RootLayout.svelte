@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { navigating } from '$app/stores';
-	import NavBar from '../header/NavBar.svelte';
-	import Footer from '../footer/Footer.svelte';
+	import NavBar from '@/comps/header/NavBar.svelte';
+	import Footer from '@/comps/footer/Footer.svelte';
 	import Badge from './Badge.svelte';
-	import globalVars from '../../vars/GlobalVars';
-	import { invalidate } from '$app/navigation';
+	import globalVars from '@/vars/GlobalVars';
 
 	const { navigationsLinks } = globalVars;
 

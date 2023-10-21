@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BadgeImage from '../../assets/badge.webp';
+	import BadgeImage from '@/assets/badge.webp';
 
 	export let isCollapse: boolean = false;
 </script>
@@ -15,7 +15,7 @@
 		aspect-ratio: 1/1;
 
 		border-radius: 1.5rem;
-		transition: all 400ms ease;
+		transition: all 400ms cubic-bezier(0.86, 0, 0.07, 1);
 
 		position: fixed;
 		left: calc(50% - calc(var(--badge-width) / 2));

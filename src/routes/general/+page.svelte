@@ -1,10 +1,10 @@
 <script>
-	import ResponsiveContainer from '../../comps/common/ResponsiveContainer.svelte';
-	import Fursonas from '../../vars/Fursonas';
-	import SectionTitle from '../../comps/common/SectionTitle.svelte';
-	import TableRow from '../../comps/common/TableRow.svelte';
-	import DropDownCard from '../../comps/common/DropDownCard.svelte';
-	import * as quickFacts from '../../vars/Quickfact';
+	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
+	import Fursonas from '@/vars/Fursonas';
+	import SectionTitle from '@/comps/common/SectionTitle.svelte';
+	import TableRow from '@/comps/common/TableRow.svelte';
+	import DropDownCard from '@/comps/common/DropDownCard.svelte';
+	import * as quickFacts from '@/vars/Quickfact';
 
 	const currSona = 'Rory Chris';
 

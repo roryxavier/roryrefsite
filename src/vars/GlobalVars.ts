@@ -1,4 +1,4 @@
-import RouteInfo from '../model/RouteInfo';
+import RouteInfo from '@/model/RouteInfo';
 
 export default {
 	version: '0.8.5',

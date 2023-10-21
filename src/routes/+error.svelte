@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import RootLayout from '../comps/common/RootLayout.svelte';
+	import RootLayout from '@/comps/common/RootLayout.svelte';
 
 	const status = $page.status;
 	const message = $page.error.message;

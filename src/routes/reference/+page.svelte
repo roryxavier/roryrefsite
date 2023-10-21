@@ -1,9 +1,9 @@
 <script>
-	import ResponsiveContainer from '../../comps/common/ResponsiveContainer.svelte';
-	import Fursonas from '../../vars/Fursonas';
-	import SectionTitle from '../../comps/common/SectionTitle.svelte';
+	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
+	import Fursonas from '@/vars/Fursonas';
+	import SectionTitle from '@/comps/common/SectionTitle.svelte';
 
-	import ReferenceButton from '../../comps/home/Reference-Button.svelte';
+	import ReferenceButton from '@/comps/home/Reference-Button.svelte';
 	import TableColour from './TableColour.svelte';
 
 	const currSona = 'Rory Chris';

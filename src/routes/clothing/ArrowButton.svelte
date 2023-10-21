@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ICON_ARROW from '../../assets/icon/arrow_down_224071.svg';
+	import ICON_ARROW from '@/assets/icon/arrow_down_224071.svg';
 
 	export let direction: 'down' | 'up' | 'left' | 'right' = 'down';
 	export let onClick: () => void;

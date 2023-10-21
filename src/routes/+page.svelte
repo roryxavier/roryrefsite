@@ -1,10 +1,10 @@
 <script>
-	import globalVars from '../vars/GlobalVars';
-	import ReferenceButton from '../comps/home/Reference-Button.svelte';
+	import globalVars from '@/vars/GlobalVars';
+	import ReferenceButton from '@/comps/home/Reference-Button.svelte';
 
-	import SocialButton from '../comps/home/SocialButton.svelte';
-	import Fursonas from '../vars/Fursonas';
-	import CardText from '../comps/common/CardText.svelte';
+	import SocialButton from '@/comps/home/SocialButton.svelte';
+	import Fursonas from '@/vars/Fursonas';
+	import CardText from '@/comps/common/CardText.svelte';
 
 	const roryInfo = Fursonas.find((fur) => fur.name === 'Rory Chris');
 </script>

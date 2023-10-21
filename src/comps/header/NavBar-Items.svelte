@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import NavBarButton from './NavBar-Button.svelte';
-	import NavBarDropDown from './NavBar-DropDown.svelte';
-	import globalVars from '../../vars/GlobalVars';
-	import Fusonas from '../../vars/Fursonas';
-	import type RouteInfo from '../../model/RouteInfo';
+	// import NavBarDropDown from './NavBar-DropDown.svelte';
+	import globalVars from '@/vars/GlobalVars';
+	import Fusonas from '@/vars/Fursonas';
+	import type RouteInfo from '@/model/RouteInfo';
 
 	export let onClickItem = (item: RouteInfo) => {};
 

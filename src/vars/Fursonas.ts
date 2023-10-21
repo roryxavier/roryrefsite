@@ -1,4 +1,4 @@
-import Fursona from '../model/Fursona';
+import Fursona from '@/model/Fursona';
 
 const list: Fursona[] = [
 	new Fursona({

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ArrowButton from './ArrowButton.svelte';
-	import SectionTitle from '../../comps/common/SectionTitle.svelte';
-	import ResponsiveContainer from '../../comps/common/ResponsiveContainer.svelte';
+	import SectionTitle from '@/comps/common/SectionTitle.svelte';
+	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
 	import ImageCard from './ImageCard.svelte';
 	import GalleryNavigator from './GalleryNavigator.svelte';
 
