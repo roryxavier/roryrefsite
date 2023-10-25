@@ -1,18 +1,19 @@
 <script>
 	import RootLayout from '@/comps/common/RootLayout.svelte';
+	import OgImage from '@/assets/og-image.png';
 	import '@/app.css';
 </script>
 
 <svelte:head>
 	<!-- Twitter Meta -->
 	<meta name="twitter:title" content="Rory Xavier" />
-	<meta name="twitter:image" content="https://ref.rorywolf.net/favicon.ico" />
+	<meta name="twitter:image" content={OgImage} />
 	<meta name="twitter:description" content="Rory Chris | Character Information Page" />
 
 	<!-- Meta -->
 	<meta name="title" property="og:title" content="Rory Xavier" />
 	<meta name="type" property="og:type" content="website" />
-	<meta name="image" property="og:image" content="https://ref.rorywolf.net/favicon.ico" />
+	<meta name="image" property="og:image" content={OgImage} />
 	<meta name="url" property="og:url" content="https://ref.rorywolf.net/favicon.ico" />
 	<meta
 		name="description"
