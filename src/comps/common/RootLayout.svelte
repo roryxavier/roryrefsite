@@ -4,9 +4,7 @@
 	import NavBar from '@/comps/header/NavBar.svelte';
 	import Footer from '@/comps/footer/Footer.svelte';
 	import Badge from './Badge.svelte';
-	import globalVars from '@/vars/GlobalVars';
-
-	const { navigationsLinks } = globalVars;
+	import { list as navigationsLinks } from '@/model/RouteInfo';
 
 	$: if ($navigating) onRouteChange();
 

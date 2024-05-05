@@ -10,3 +10,17 @@ export default class RouteInfo {
 		this.header = header;
 	}
 }
+
+export const HOME = new RouteInfo('Home', '/', 'Rory Reference Website');
+export const GENERAL = new RouteInfo('General', '/general', 'Rory - General');
+export const REFERENCE = new RouteInfo('Reference', '/reference', 'Rory - Reference');
+export const CLOTHING = new RouteInfo('Clothing (Beta)', '/clothing', 'Rory - Clothing');
+export const ABOUT_ME = new RouteInfo('About Me (Beta)', '/about', 'Rory - About Me');
+
+export const list = [
+	HOME,
+	GENERAL,
+	REFERENCE,
+	// CLOTHING,
+	// ABOUT_ME,
+];

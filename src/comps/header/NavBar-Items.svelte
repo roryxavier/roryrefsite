@@ -2,19 +2,14 @@
 	import { onMount } from 'svelte';
 	import NavBarButton from './NavBar-Button.svelte';
 	// import NavBarDropDown from './NavBar-DropDown.svelte';
-	import globalVars from '@/vars/GlobalVars';
-	import Fusonas from '@/vars/Fursonas';
+	// import { LIST as Fusonas } from '@/vars/Fursonas';
 	import type RouteInfo from '@/model/RouteInfo';
+	import { list as navigationsLinks } from '@/model/RouteInfo';
 
 	export let onClickItem = (item: RouteInfo) => {};
 
-	const { navigationsLinks } = globalVars;
-	const furList = Fusonas;
-
-	// variables
 	let pathname = '';
 
-	// lifecycles
 	onMount(() => {
 		pathname = window.location.pathname;
 		window.addEventListener('popstate', () => {
@@ -36,4 +31,4 @@
 		}}
 	/>
 {/each}
-<!-- <NavBarDropDown menus={furList} /> -->
+<!-- <NavBarDropDown menus={Fusonas} /> -->

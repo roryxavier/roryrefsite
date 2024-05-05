@@ -6,16 +6,13 @@
 	import globalVars from '@/vars/GlobalVars';
 	import NavBarItems from './NavBar-Items.svelte';
 	import type RouteInfo from '@/model/RouteInfo';
+	import { list as navigationsLinks } from '@/model/RouteInfo';
 
 	export let isScrollDown = false;
 	export let onItemSelected = (item: RouteInfo) => {};
 	export let onExpand = (expand: boolean) => {};
 	export let isBadgeCollapse: boolean;
 
-	// constant
-	const { navigationsLinks } = globalVars;
-
-	// variables
 	let pathname = '';
 	let isExpand = false;
 	let title = '';

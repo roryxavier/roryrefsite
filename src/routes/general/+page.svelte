@@ -1,28 +1,24 @@
 <script>
 	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
-	import Fursonas from '@/vars/Fursonas';
+	import { RORY_CHRIS } from '@/model/Fursona';
 	import SectionTitle from '@/comps/common/SectionTitle.svelte';
 	import TableRow from '@/comps/common/TableRow.svelte';
 	import DropDownCard from '@/comps/common/DropDownCard.svelte';
 	import * as quickFacts from '@/vars/Quickfact';
 
-	const currSona = 'Rory Chris';
-
-	const roryInfo = Fursonas.find((fur) => fur.name === currSona);
+	const currentSona = RORY_CHRIS;
 </script>
 
 <main>
 	<ResponsiveContainer>
 		<div class="Section">
-			{#if roryInfo}
-				<SectionTitle title="General" id_tag="general" />
-				<table class="w-full table-fixed" style="border-bottom: 1px solid indigo">
-					<TableRow key="Key" value="Value" isTitle={true} />
-					{#each roryInfo.generalProperties as property}
-						<TableRow key={property.key} value={property.value} />
-					{/each}
-				</table>
-			{/if}
+			<SectionTitle title="General" id_tag="general" />
+			<table class="w-full table-fixed" style="border-bottom: 1px solid indigo">
+				<TableRow key="Key" value="Value" isTitle={true} />
+				{#each currentSona.generalBioTableKVPair as property}
+					<TableRow key={property.title} value={property.content} />
+				{/each}
+			</table>
 		</div>
 
 		<div class="Section">
