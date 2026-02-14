@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FURSONA_LIST } from '@/model/Fursona';
+	import { FURSONA_LIST } from '@/vars/meta';
 	import FursonaCard from './components/fursona-card.svelte';
 </script>
 

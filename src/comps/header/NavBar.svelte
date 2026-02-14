@@ -3,9 +3,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ICON_ARROW from '@/assets/icon/arrow_down_224071.svg';
-	import globalVars from '@/vars/GlobalVars';
 	import NavBarItems from './NavBar-Items.svelte';
-	import { ROUTE_NAVIGATIONS, RouteInfoModel } from '@/model/RouteInfo';
+	import type { RouteInfoModel } from '@/model/RouteInfo';
+	import { ROUTE_NAVIGATIONS } from '@/vars/meta';
 
 	export let isScrollDown = false;
 	export let onItemSelected = (item: RouteInfoModel) => {};

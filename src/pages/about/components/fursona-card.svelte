@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FursonaModel } from '@/model/Fursona';
+	import type { FursonaModel } from '@/model/Fursona';
 
 	export let fursona: FursonaModel;
 </script>

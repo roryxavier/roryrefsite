@@ -1,10 +1,9 @@
 <script>
 	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
-	import { FURSONA_RORY_CHRIS } from '@/model/Fursona';
 	import SectionTitle from '@/comps/common/SectionTitle.svelte';
 	import TableRow from '@/comps/common/TableRow.svelte';
 	import DropDownCard from '@/comps/common/DropDownCard.svelte';
-	import * as quickFacts from '@/vars/Quickfact';
+	import { FURSONA_RORY_CHRIS, RORY_DRINKS, RORY_HOBBIES, RORY_PERSONALITIES } from '@/vars/meta';
 </script>
 
 <main>
@@ -22,7 +21,7 @@
 
 				<DropDownCard title="QuickFacts">
 					<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
-						{#each quickFacts.Personality as quick}
+						{#each RORY_PERSONALITIES as quick}
 							<li>{quick}</li>
 						{/each}
 					</div>
@@ -57,7 +56,7 @@
 				<SectionTitle title="Hobbies" id_tag="hobbies" />
 				<DropDownCard title="QuickFacts">
 					<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
-						{#each quickFacts.Hobbies as quick}
+						{#each RORY_HOBBIES as quick}
 							<li>{quick}</li>
 						{/each}
 					</div>
@@ -95,7 +94,7 @@
 					<SectionTitle title="Food & Drinks" id_tag="food_drinks" />
 					<DropDownCard title="QuickFacts">
 						<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
-							{#each quickFacts.FoodDrinks as quick}
+							{#each RORY_DRINKS as quick}
 								<li>{quick}</li>
 							{/each}
 						</div>

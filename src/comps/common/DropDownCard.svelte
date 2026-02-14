@@ -7,7 +7,7 @@
 
 <div
 	class="DropDownCard flex flex-col items-stretch justify-start rounded-xl"
-	isExpand={`${isExpand}`}
+	data-expand={`${isExpand}`}
 >
 	<button
 		class="header w-full p-6 flex flex-row items-center justify-between gap-5 text-start"
@@ -51,7 +51,7 @@
 		}
 	}
 
-	.DropDownCard[isExpand='true'] {
+	.DropDownCard[data-expand='true'] {
 		.content {
 			grid-template-rows: 1fr;
 
@@ -64,7 +64,7 @@
 			}
 		}
 	}
-	.DropDownCard[isExpand='false'] {
+	.DropDownCard[data-expand='false'] {
 		.header {
 			img {
 				transform: rotate(180deg);

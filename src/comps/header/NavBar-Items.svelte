@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import NavBarButton from './NavBar-Button.svelte';
-	import { ROUTE_NAVIGATIONS, RouteInfoModel } from '@/model/RouteInfo';
+	import type { RouteInfoModel } from '@/model/RouteInfo';
+	import { ROUTE_NAVIGATIONS } from '@/vars/meta';
 	// import NavBarDropDown from './NavBar-DropDown.svelte';
 	// import { LIST as Fusonas } from '@/vars/Fursonas';
 

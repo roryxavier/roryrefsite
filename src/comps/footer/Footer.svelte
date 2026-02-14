@@ -1,11 +1,11 @@
 <script lang="ts">
-	import globalVars from '@/vars/GlobalVars';
+	import { APP_VERSION, OWNER_NAME, YEAR_UPDATED } from '@/vars/meta';
 </script>
 
 <div class="footer pt-4 pb-4 w-full text-center text-white bg-blue-800">
 	<p>
-		v{globalVars.version} © {globalVars.pageMetaData.yearUpdated}
-		{globalVars.pageMetaData.copyWriteName}
+		v{APP_VERSION} © {YEAR_UPDATED}
+		{OWNER_NAME}
 	</p>
 	<p>Created by Rory 🐺 & Jimmy 🦊</p>
 </div>

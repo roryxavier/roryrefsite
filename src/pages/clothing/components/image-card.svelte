@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GalleryModel } from '@/model/Gallery';
+	import type { GalleryModel } from '@/model/Gallery';
 
 	export let gallery: GalleryModel;
 </script>

@@ -4,7 +4,7 @@
 	import NavBar from '@/comps/header/NavBar.svelte';
 	import Footer from '@/comps/footer/Footer.svelte';
 	import Badge from './Badge.svelte';
-	import { ROUTE_NAVIGATIONS } from '@/model/RouteInfo';
+	import { ROUTE_NAVIGATIONS } from '@/vars/meta';
 
 	$: if ($navigating) onRouteChange();
 

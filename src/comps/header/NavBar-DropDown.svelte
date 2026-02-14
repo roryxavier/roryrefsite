@@ -1,7 +1,7 @@
 <svelte:options accessors />
 
 <script lang="ts">
-	import { FursonaModel } from '@/model/Fursona';
+	import type { FursonaModel } from '@/model/Fursona';
 	import NavBarButton from './NavBar-Button.svelte';
 
 	export let menus: FursonaModel[] = [];
@@ -49,7 +49,7 @@
 				onFocus={() => (isChildrenFocus = true)}
 				onBlur={(e) => {
 					isChildrenFocus = false;
-					e.target.blur();
+					if (e.target instanceof HTMLElement) e.target.blur();
 					hide();
 				}}
 			/>

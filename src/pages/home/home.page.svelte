@@ -1,8 +1,8 @@
 <script>
 	import ReferenceButton from '@/comps/home/Reference-Button.svelte';
 	import SocialButton from '@/comps/home/SocialButton.svelte';
-	import { FURSONA_RORY_CHRIS } from '@/model/Fursona';
 	import CardText from '@/comps/common/CardText.svelte';
+	import { FURSONA_RORY_CHRIS } from '@/vars/meta';
 </script>
 
 <div class="Page">

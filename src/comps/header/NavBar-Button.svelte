@@ -6,7 +6,7 @@
 	export let href = '';
 	export let target = '';
 	export let onClick = () => {};
-	export let onBlur = () => {};
+	export let onBlur = (e: FocusEvent) => {};
 	export let onFocus = () => {};
 </script>
 
@@ -16,7 +16,7 @@
 		{href}
 		{target}
 		on:click={() => onClick()}
-		on:blur={() => onBlur()}
+		on:blur={(e) => onBlur(e)}
 		on:focus={() => onFocus()}
 	>
 		{title}
@@ -28,7 +28,7 @@
 	<button
 		class="NavBarButton {isSelected ? 'NavBarButton-isSelected' : 'NavBarButton-isDeselected'}"
 		on:click={() => onClick()}
-		on:blur={() => onBlur()}
+		on:blur={(e) => onBlur(e)}
 		on:focus={() => onFocus()}
 	>
 		{title}

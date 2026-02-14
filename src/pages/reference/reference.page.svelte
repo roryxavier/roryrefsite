@@ -1,9 +1,9 @@
 <script>
 	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
-	import { FURSONA_RORY_CHRIS } from '@/model/Fursona';
 	import SectionTitle from '@/comps/common/SectionTitle.svelte';
 	import ReferenceButton from '@/comps/home/Reference-Button.svelte';
 	import TableColour from './components/table-colour.svelte';
+	import { FURSONA_RORY_CHRIS } from '@/vars/meta';
 </script>
 
 <main>
