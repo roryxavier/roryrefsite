@@ -1,4 +1,4 @@
-export class Gallery {
+export class GalleryModel {
 	readonly title: string = '';
 	readonly subtitle: string = '';
 

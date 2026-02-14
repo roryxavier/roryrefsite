@@ -1,21 +1,21 @@
 <script lang="ts">
 	import ResponsiveContainer from '@/comps/common/ResponsiveContainer.svelte';
 	import ImageCard from './ImageCard.svelte';
-	import { Gallery } from './Gallery';
+	import { GalleryModel } from '../../model/Gallery';
 
-	const galleries: Gallery[] = [
-		new Gallery('https://pbs.twimg.com/media/FzH5yEOaMAATs0W?format=jpg&name=small', {
+	const galleries: GalleryModel[] = [
+		new GalleryModel('https://pbs.twimg.com/media/FzH5yEOaMAATs0W?format=jpg&name=small', {
 			subtitle: 'Cuddling boyfriend',
 		}),
-		new Gallery('https://pbs.twimg.com/media/Fxl6muQaUAA3EJR?format=jpg&name=small', {
+		new GalleryModel('https://pbs.twimg.com/media/Fxl6muQaUAA3EJR?format=jpg&name=small', {
 			title: 'Rory Xavier',
 			subtitle: 'Pride!!',
 		}),
-		new Gallery('https://pbs.twimg.com/media/FWqriLcUUAEmz9a?format=jpg&name=small', {
+		new GalleryModel('https://pbs.twimg.com/media/FWqriLcUUAEmz9a?format=jpg&name=small', {
 			title: 'Rory Xavier',
 			subtitle: "Who's this pokemon?",
 		}),
-		new Gallery('https://pbs.twimg.com/media/FWqqN_NVQAECp33?format=jpg&name=small', {
+		new GalleryModel('https://pbs.twimg.com/media/FWqqN_NVQAECp33?format=jpg&name=small', {
 			title: 'Rory Xavier',
 			subtitle: 'Why are you looking at me like that?',
 		}),

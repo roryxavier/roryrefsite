@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Gallery } from './Gallery';
+	import type { GalleryModel } from '../../model/Gallery';
 
-	export let gallery: Gallery;
+	export let gallery: GalleryModel;
 </script>
 
 <div class="image-card" title={gallery.title}>
