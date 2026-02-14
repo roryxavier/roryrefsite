@@ -6,8 +6,10 @@
 
 {#if isTitle}
 	<thead class="Row Row-title">
-		<th class="Row-key">Key</th>
-		<th class="Row-value">Value</th>
+		<tr>
+			<th class="Row-key">Key</th>
+			<th class="Row-value">Value</th>
+		</tr>
 	</thead>
 {/if}
 

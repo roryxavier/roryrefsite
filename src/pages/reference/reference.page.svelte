@@ -16,7 +16,7 @@
 				style="width: 120%; border-radius: 0.3em"
 			/>
 			<div class="text-center">Rory Chris Full Body Reference</div>
-			<span class="text-base text-center">
+			<span class="text-center text-base">
 				art by <a
 					class="text-blue-600"
 					href="https://twitter.com/valdithzam"
@@ -24,8 +24,8 @@
 					rel="noreferrer">{FURSONA_RORY_CHRIS.ref.author}</a
 				></span
 			>
-			<div class="h-1.5" />
-			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
+			<div class="h-1.5"></div>
+			<div class="align-center flex max-w-xs flex-col" style="width: 100%; margin: auto;">
 				<ReferenceButton
 					title="Download Refsheet (4.7MB) ⬇"
 					onClick={() => window.open(FURSONA_RORY_CHRIS.ref.full, '_blank')}

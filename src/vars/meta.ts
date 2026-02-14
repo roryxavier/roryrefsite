@@ -1,7 +1,7 @@
 import { FursonaModel } from '@/model/Fursona';
 import { RouteInfoModel } from '@/model/RouteInfo';
 
-export const APP_VERSION = '0.8.5';
+export const APP_VERSION = '1.0.0';
 export const OWNER_NAME = 'Rory Xavier';
 export const YEAR_UPDATED = '2026';
 

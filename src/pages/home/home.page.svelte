@@ -8,9 +8,9 @@
 <div class="page">
 	<main class="gap-12">
 		<div class="page-header flex flex-col items-center gap-1">
-			<div style="width: var(--badge-width); height: var(--badge-height)" />
-			<span class="text-center font-bold text-3xl text-blue-500">Rory Here!</span>
-			<span class="text-center text-lg flex flex-row items-center gap-1.5">
+			<div style="width: var(--badge-width); height: var(--badge-height)"></div>
+			<span class="text-center text-3xl font-bold text-blue-500">Rory Here!</span>
+			<span class="flex flex-row items-center gap-1.5 text-center text-lg">
 				25
 				<span style="font-size: 0.7em; padding-top: 0.2em">|</span>
 				He/Him
@@ -18,8 +18,8 @@
 		</div>
 
 		<div class="flex flex-col gap-2">
-			<h2 class="font-bold text-2xl">Welcome to Rory's Refsheet Page</h2>
-			<p class="text-justify leading-6 text-lg">
+			<h2 class="text-2xl font-bold">Welcome to Rory's Refsheet Page</h2>
+			<p class="text-justify text-lg leading-6">
 				Welcome to the reference sheet for Rory, your friendly neighborhood blue wolf. As a
 				programmer and furry, I created this page to gather all information about my fursona in one
 				central location. I also wanted to provide a single source of truth for any artist
@@ -48,7 +48,7 @@
 				Just here to fetch the ref sheet? Click the button with the ref sheet you need and get
 				started!
 			</p>
-			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
+			<div class="align-center flex max-w-xs flex-col" style="width: 100%; margin: auto;">
 				<ReferenceButton
 					title="Download Refsheet (4.7MB) ⬇"
 					onClick={() => window.open(FURSONA_RORY_CHRIS.ref.full, '_blank')}

@@ -31,19 +31,23 @@
 	];
 </script>
 
-<table class="w-full flex flex-col gap-0.5" style="border-bottom: 1px solid indigo">
-	<div class="Row Row-title">
-		<th>Body Parts</th>
-		<th class="Row-title-color">Colour</th>
-	</div>
-	{#each Array(body_parts.length) as _, i}
-		<tr class="Row Row-content">
-			<td>{body_parts[i]}</td>
-			<td style="padding: 0">
-				<ColorBar hexColor={colour_value[i]} />
-			</td>
+<table class="flex w-full flex-col gap-0.5" style="border-bottom: 1px solid indigo">
+	<thead class="Row Row-title">
+		<tr>
+			<th>Body Parts</th>
+			<th class="Row-title-color">Colour</th>
 		</tr>
-	{/each}
+	</thead>
+	<tbody>
+		{#each Array(body_parts.length) as _, i}
+			<tr class="Row Row-content">
+				<td>{body_parts[i]}</td>
+				<td style="padding: 0">
+					<ColorBar hexColor={colour_value[i]} />
+				</td>
+			</tr>
+		{/each}
+	</tbody>
 </table>
 
 <style lang="scss">
@@ -73,7 +77,7 @@
 	.Row-title {
 		font-weight: 800;
 		border: 1px solid indigo;
-		border: 1px solid black; // align with theme
+		border: 1px solid black;
 		border-left: none;
 		border-right: none;
 		padding: 0.2rem;

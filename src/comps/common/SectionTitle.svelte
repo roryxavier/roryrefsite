@@ -3,4 +3,4 @@
 	export let id_tag = '';
 </script>
 
-<h1 class="text-4xl mb-8 mt-8" id={id_tag}>{title}</h1>
+<h1 class="mt-8 mb-8 text-4xl" id={id_tag}>{title}</h1>

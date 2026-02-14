@@ -10,11 +10,11 @@
 	data-expand={`${isExpand}`}
 >
 	<button
-		class="header w-full p-6 flex flex-row items-center justify-between gap-5 text-start"
+		class="header flex w-full flex-row items-center justify-between gap-5 p-6 text-start"
 		on:click={() => (isExpand = !isExpand)}
 	>
-		<h3 class="grow text-white text-lg font-bold">{title}</h3>
-		<img class="w-6 h-6 p-1" src={ICON_ARROW} alt="Click to Toggle" />
+		<h3 class="grow text-lg font-bold text-white">{title}</h3>
+		<img class="h-6 w-6 p-1" src={ICON_ARROW} alt="Click to Toggle" />
 	</button>
 
 	<div class="content">

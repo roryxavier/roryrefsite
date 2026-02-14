@@ -12,7 +12,7 @@
 			alt={`${fursona.name} image`}
 		/>
 	{/if}
-	<div class="fursona-foreground fursona-absolute" />
+	<div class="fursona-foreground fursona-absolute"></div>
 	<div class="fursona-content">
 		<span class="fursona-species">{fursona.species}</span>
 		<span class="fursona-name">{fursona.name}</span>

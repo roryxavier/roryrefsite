@@ -37,7 +37,6 @@
 		onExpand(isExpand);
 	};
 
-	// lifecycles
 	onMount(() => {
 		invalidateTitle();
 		window.addEventListener('popstate', () => invalidateTitle());
@@ -56,8 +55,13 @@
 			{isBadgeCollapse ? '' : 'NavBar-bar-badgeCollapse'}
 		"
 	>
-		<!-- svelte-ignore a11y-missing-content -->
-		<a class="NavBar-logo" style="grid-area: logo" href="/" on:click={() => invalidateTitle()} />
+		<a
+			class="NavBar-logo"
+			style="grid-area: logo"
+			href="/"
+			on:click={() => invalidateTitle()}
+			aria-label="Home"
+		></a>
 
 		<span class="NavBar-title" style="grid-area: title">{title}</span>
 		<div class="NavBar-items" style="grid-area: items">
@@ -204,7 +208,6 @@
 		}
 	}
 
-	// when small
 	@media (max-width: 500px) {
 		.NavBar {
 			.NavBar-bar {
@@ -270,7 +273,6 @@
 		}
 	}
 
-	// when big
 	@media (min-width: 501px) {
 		.NavBar {
 			display: flex;

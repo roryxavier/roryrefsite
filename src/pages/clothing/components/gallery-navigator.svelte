@@ -9,8 +9,9 @@
 		<button
 			class="index"
 			style={i === index ? 'width: 2rem; background: white' : ''}
+			aria-label={`test${i}`}
 			on:click={() => onClickIndex(i)}
-		/>
+		></button>
 	{/each}
 </div>
 

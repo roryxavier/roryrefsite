@@ -20,7 +20,7 @@
 		on:focus={() => onFocus()}
 	>
 		{title}
-		<div class="NavBarButton-highlight" />
+		<div class="NavBarButton-highlight"></div>
 	</a>
 {/if}
 
@@ -32,7 +32,7 @@
 		on:focus={() => onFocus()}
 	>
 		{title}
-		<div class="NavBarButton-highlight" />
+		<div class="NavBarButton-highlight"></div>
 	</button>
 {/if}
 

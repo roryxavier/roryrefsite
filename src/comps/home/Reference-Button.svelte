@@ -6,7 +6,7 @@
 </script>
 
 <div class="ReferenceButton">
-	<div class="ReferenceButton-shadow" />
+	<div class="ReferenceButton-shadow"></div>
 	<button class="ReferenceButton-button" on:click={() => onClick()}>{title}</button>
 </div>
 

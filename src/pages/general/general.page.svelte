@@ -20,7 +20,7 @@
 				<SectionTitle title="Personality" id_tag="personality" />
 
 				<DropDownCard title="QuickFacts">
-					<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
+					<div class="grid pr-5 pl-5 sm:grid-cols-1 md:grid-cols-2">
 						{#each RORY_PERSONALITIES as quick}
 							<li>{quick}</li>
 						{/each}
@@ -28,7 +28,7 @@
 				</DropDownCard>
 
 				<br />
-				<div id="personality-text" class="flex flex-col space-y-3 text-lg text-justify">
+				<div id="personality-text" class="flex flex-col space-y-3 text-justify text-lg">
 					<p>
 						Rory, the blue wolf, is known for his cheerful and happy-go-lucky personality, which is
 						paired with his high level of empathy. Despite being an introvert and shy. Rory has a
@@ -55,7 +55,7 @@
 
 				<SectionTitle title="Hobbies" id_tag="hobbies" />
 				<DropDownCard title="QuickFacts">
-					<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
+					<div class="grid pr-5 pl-5 sm:grid-cols-1 md:grid-cols-2">
 						{#each RORY_HOBBIES as quick}
 							<li>{quick}</li>
 						{/each}
@@ -63,7 +63,7 @@
 				</DropDownCard>
 				<br />
 
-				<div id="hobbies-text" class="flex flex-col space-y-3 text-lg text-justify">
+				<div id="hobbies-text" class="flex flex-col space-y-3 text-justify text-lg">
 					<p>
 						Rory is a computer nerd who has a deep love and passion for programming and all things
 						computer-related. He is constantly thinking and playing with computer parts and has
@@ -93,13 +93,13 @@
 
 					<SectionTitle title="Food & Drinks" id_tag="food_drinks" />
 					<DropDownCard title="QuickFacts">
-						<div class="grid md:grid-cols-2 sm:grid-cols-1 pl-5 pr-5">
+						<div class="grid pr-5 pl-5 sm:grid-cols-1 md:grid-cols-2">
 							{#each RORY_DRINKS as quick}
 								<li>{quick}</li>
 							{/each}
 						</div>
 					</DropDownCard>
-					<div id="food-drink" class="flex flex-col space-y-3 text-lg text-justify">
+					<div id="food-drink" class="flex flex-col space-y-3 text-justify text-lg">
 						<p>
 							Rory has a unique way of starting his day, he opts for a cup of warm and comforting
 							chocolate coffee instead of the conventional plain coffee. Unlike many coffee lovers,

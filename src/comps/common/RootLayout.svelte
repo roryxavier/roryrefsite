@@ -32,7 +32,7 @@
 		invalidateBadge();
 	};
 	const onNavigationSelect = () => {
-		app.scrollTop = 0;
+		if (app) app.scrollTop = 0;
 	};
 	const onNavigationExpand = (expand: boolean) => {
 		isNavExpand = expand;
@@ -70,7 +70,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
 </svelte:head>
 
-<div class="background background-{backgroundShow}" style="z-index: 1" />
+<div class="background background-{backgroundShow}" style="z-index: 1"></div>
 <div
 	class="AppPage-body AppPage-body-{appShow}"
 	style="z-index: 2;"
@@ -137,7 +137,6 @@
 		opacity: 1;
 	}
 
-	// global variable
 	.AppPage-body {
 		--navbar-height: 5rem;
 		--footer-height: 5rem;

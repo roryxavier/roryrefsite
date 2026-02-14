@@ -1,7 +1,7 @@
 <script>
+	import './layout.css';
 	import RootLayout from '@/comps/common/RootLayout.svelte';
 	import OgImage from '@/assets/og-image.png';
-	import '@/app.css';
 </script>
 
 <svelte:head>

@@ -1,7 +1,7 @@
 <div class="section">
-	<div class="h-10" />
+	<div class="h-10"></div>
 	<slot />
-	<div class="h-5" />
+	<div class="h-5"></div>
 </div>
 
 <style>

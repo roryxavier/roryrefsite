@@ -27,7 +27,7 @@
 	on:mouseover={() => reset()}
 	on:focus={() => reset()}
 >
-	<div class="ColorBar-bar rounded" style="background-color: {hexColor};" />
+	<div class="ColorBar-bar rounded" style="background-color: {hexColor};"></div>
 	<span class="ColorBar-hex">{hexColor.toUpperCase()}</span>
 	<span class="ColorBar-text">{text}</span>
 </button>

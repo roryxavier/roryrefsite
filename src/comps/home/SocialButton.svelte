@@ -9,9 +9,9 @@
 
 <a class="SocialButton w-full" {href} {target} rel="noopener noreferrer">
 	{#if typeof icon === 'string' && icon.trim().length}
-		<img class="w-4 h-4 object-cover" src={icon} alt={`Icon ${title}`} />
+		<img class="h-4 w-4 object-cover" src={icon} alt={`Icon ${title}`} />
 	{/if}
-	<span class="grow text-start text-base font-bold leading-4">{title}</span></a
+	<span class="grow text-start text-base leading-4 font-bold">{title}</span></a
 >
 
 <style lang="scss">

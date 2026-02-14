@@ -2,7 +2,7 @@
 	import { APP_VERSION, OWNER_NAME, YEAR_UPDATED } from '@/vars/meta';
 </script>
 
-<div class="footer pt-4 pb-4 w-full text-center text-white bg-blue-800">
+<div class="footer w-full bg-blue-800 pt-4 pb-4 text-center text-white">
 	<p>
 		v{APP_VERSION} © {YEAR_UPDATED}
 		{OWNER_NAME}
