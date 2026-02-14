@@ -8,9 +8,7 @@
 
 	$: if ($navigating) onRouteChange();
 
-	let navbar: typeof NavBar;
 	let app: HTMLDivElement;
-	let badge: typeof Badge;
 
 	let backgroundShow = false;
 	let appShow = false;

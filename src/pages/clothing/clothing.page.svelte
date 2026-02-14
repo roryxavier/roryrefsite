@@ -50,9 +50,6 @@
 				display: grid;
 				grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 			}
-			& > * {
-				width: 100%;
-			}
 		}
 	}
 </style>

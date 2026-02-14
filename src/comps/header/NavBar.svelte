@@ -292,10 +292,6 @@
 				.NavBar-toggle {
 					display: none;
 				}
-
-				.NavBar-dropdown {
-					display: none;
-				}
 			}
 			.NavBar-bar-badgeCollapse {
 				grid-template-columns: 0 1fr;

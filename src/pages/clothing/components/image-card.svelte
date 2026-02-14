@@ -15,6 +15,7 @@
 <style lang="scss">
 	.image-card {
 		flex-grow: 1 1;
+		width: 100%;
 		height: 100%;
 		border-radius: 0.5rem;
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);

@@ -5,9 +5,9 @@
 	import { FURSONA_RORY_CHRIS } from '@/vars/meta';
 </script>
 
-<div class="Page">
+<div class="page">
 	<main class="gap-12">
-		<div class="Page-header flex flex-col items-center gap-1">
+		<div class="page-header flex flex-col items-center gap-1">
 			<div style="width: var(--badge-width); height: var(--badge-height)" />
 			<span class="text-center font-bold text-3xl text-blue-500">Rory Here!</span>
 			<span class="text-center text-lg flex flex-row items-center gap-1.5">
@@ -60,7 +60,7 @@
 </div>
 
 <style lang="scss">
-	.Page {
+	.page {
 		& > main {
 			max-width: var(--content-max-width);
 			display: flex;
@@ -69,14 +69,6 @@
 			margin: 0.5rem;
 			padding: 1rem;
 			font-size: 1.25rem;
-
-			header {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				padding: 2rem;
-				gap: 0.5rem;
-			}
 		}
 	}
 </style>
