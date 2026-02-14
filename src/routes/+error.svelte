@@ -3,7 +3,7 @@
 	import RootLayout from '@/comps/common/RootLayout.svelte';
 
 	const status = $page.status;
-	const message = $page.error.message;
+	const message: string | undefined = $page.error?.message;
 </script>
 
 <main>

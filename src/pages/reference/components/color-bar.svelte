@@ -7,7 +7,8 @@
 		const textarea = document.createElement('textarea');
 		textarea.value = hexColor;
 		textarea.setAttribute('readonly', '');
-		textarea.style = { position: 'absolute', left: '-9999px' };
+		textarea.style.position = 'absolute';
+		textarea.style.left = '-9999px';
 		document.body.appendChild(textarea);
 		textarea.select();
 		document.execCommand('copy');

@@ -1,10 +1,10 @@
 <svelte:options accessors />
 
 <script lang="ts">
+	import { FursonaModel } from '@/model/Fursona';
 	import NavBarButton from './NavBar-Button.svelte';
-	import type Fursona from '@/model/Fursona';
 
-	export let menus: Fursona[] = [];
+	export let menus: FursonaModel[] = [];
 
 	let isShowing = false;
 	let isChildrenFocus = false;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ColorBar from './ColorBar.svelte';
+	import ColorBar from './color-bar.svelte';
 
 	const body_parts = [
 		'Main Body Part',
