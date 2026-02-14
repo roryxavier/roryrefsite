@@ -5,11 +5,10 @@
 	import ICON_ARROW from '@/assets/icon/arrow_down_224071.svg';
 	import globalVars from '@/vars/GlobalVars';
 	import NavBarItems from './NavBar-Items.svelte';
-	import type RouteInfo from '@/model/RouteInfo';
-	import { list as navigationsLinks } from '@/model/RouteInfo';
+	import { ROUTE_NAVIGATIONS, RouteInfoModel } from '@/model/RouteInfo';
 
 	export let isScrollDown = false;
-	export let onItemSelected = (item: RouteInfo) => {};
+	export let onItemSelected = (item: RouteInfoModel) => {};
 	export let onExpand = (expand: boolean) => {};
 	export let isBadgeCollapse: boolean;
 
@@ -18,7 +17,7 @@
 	let title = '';
 	let header = '';
 
-	const invalidateItem = (item: RouteInfo) => {
+	const invalidateItem = (item: RouteInfoModel) => {
 		pathname = window.location.pathname;
 		isExpand = false;
 		title = item.title;
@@ -30,7 +29,7 @@
 	};
 	const invalidateTitle = () => {
 		pathname = window.location.pathname;
-		const item = navigationsLinks.find((navigationsLink) => navigationsLink.path === pathname);
+		const item = ROUTE_NAVIGATIONS.find((navigationsLink) => navigationsLink.path === pathname);
 		if (item) invalidateItem(item);
 	};
 	const toggleExpand = () => {
@@ -52,7 +51,7 @@
 <div class="NavBar {isScrollDown ? 'NavBar-isScrolledUp' : 'NavBar-isScrolledDown'}">
 	<nav
 		class="
-			NavBar-bar 
+			NavBar-bar
 			{isExpand ? 'NavBar-bar-isExpand' : 'NavBar-bar-isCollapsed'}  
 			{isBadgeCollapse ? '' : 'NavBar-bar-badgeCollapse'}
 		"

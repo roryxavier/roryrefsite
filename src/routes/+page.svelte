@@ -1,10 +1,8 @@
 <script>
 	import ReferenceButton from '@/comps/home/Reference-Button.svelte';
 	import SocialButton from '@/comps/home/SocialButton.svelte';
-	import { RORY_CHRIS } from '@/model/Fursona';
+	import { FURSONA_RORY_CHRIS } from '@/model/Fursona';
 	import CardText from '@/comps/common/CardText.svelte';
-
-	const currentSona = RORY_CHRIS;
 </script>
 
 <div class="Page">
@@ -30,14 +28,15 @@
 		</div>
 
 		<ul class="flex flex-row flex-wrap items-stretch justify-start gap-1">
-			{#each currentSona.socialLinks as socialLink}
+			{#each FURSONA_RORY_CHRIS.socialLinks as socialLink}
 				<li>
 					<SocialButton title={socialLink.title} icon={socialLink.icon} href={socialLink.href} />
 				</li>
 			{/each}
 		</ul>
 
-		<CardText>
+		<CardText
+			>FURSONA_RORY_CHRIS
 			<b>Note:</b> Please note that this page is still a work in progress, as indicated by the version
 			number 0.x.x in the footer. I am actively updating and refining the site, adding more information
 			and details. If you encounter any issues, please do not hesitate to bring them to my attention.
@@ -52,9 +51,10 @@
 			<div class="max-w-xs flex flex-col align-center" style="width: 100%; margin: auto;">
 				<ReferenceButton
 					title="Download Refsheet (4.7MB) ⬇"
-					onClick={() => window.open(currentSona.ref.full, '_blank')}
+					onClick={() => window.open(FURSONA_RORY_CHRIS.ref.full, '_blank')}
 				/>
 			</div>
+			FURSONA_RORY_CHRIS
 		</div>
 	</main>
 </div>

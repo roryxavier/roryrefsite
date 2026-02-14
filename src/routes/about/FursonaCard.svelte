@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Fursona } from './Fursona';
+	import { FursonaModel } from '@/model/Fursona';
 
-	export let fursona: Fursona;
+	export let fursona: FursonaModel;
 </script>
 
 <div class="fursona-card">

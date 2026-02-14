@@ -4,7 +4,7 @@
 	export let gallery: Gallery;
 </script>
 
-<div class="image-card">
+<div class="image-card" title={gallery.title}>
 	<img src={gallery.image} alt={gallery.subtitle} />
 	<div>
 		<span>{gallery.subtitle}</span>

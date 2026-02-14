@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { Fursona } from './Fursona';
+	import { FURSONA_LIST } from '@/model/Fursona';
 	import FursonaCard from './FursonaCard.svelte';
-
-	const fursonas: Fursona[] = Fursona.list;
 </script>
 
 <div class="page-about">
 	<div class="fursonas">
-		{#each fursonas as fursona}
+		{#each FURSONA_LIST as fursona}
 			<FursonaCard {fursona} />
 		{/each}
 	</div>

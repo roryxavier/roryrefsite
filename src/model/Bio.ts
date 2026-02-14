@@ -3,7 +3,7 @@ export interface BioData {
 	content: string;
 }
 
-export class Bio {
+export class BioModel {
 	readonly title: string;
 	readonly content: string;
 

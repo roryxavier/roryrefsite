@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import NavBarButton from './NavBar-Button.svelte';
+	import { ROUTE_NAVIGATIONS, RouteInfoModel } from '@/model/RouteInfo';
 	// import NavBarDropDown from './NavBar-DropDown.svelte';
 	// import { LIST as Fusonas } from '@/vars/Fursonas';
-	import type RouteInfo from '@/model/RouteInfo';
-	import { list as navigationsLinks } from '@/model/RouteInfo';
 
-	export let onClickItem = (item: RouteInfo) => {};
+	export let onClickItem = (item: RouteInfoModel) => {};
 
 	let pathname = '';
 
@@ -18,7 +17,7 @@
 	});
 </script>
 
-{#each navigationsLinks as navigation}
+{#each ROUTE_NAVIGATIONS as navigation}
 	<NavBarButton
 		isSelected={navigation.path === pathname}
 		title={navigation.title}

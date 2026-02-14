@@ -4,7 +4,7 @@
 	import NavBar from '@/comps/header/NavBar.svelte';
 	import Footer from '@/comps/footer/Footer.svelte';
 	import Badge from './Badge.svelte';
-	import { list as navigationsLinks } from '@/model/RouteInfo';
+	import { ROUTE_NAVIGATIONS } from '@/model/RouteInfo';
 
 	$: if ($navigating) onRouteChange();
 
@@ -49,7 +49,7 @@
 		}
 
 		const pathname = window.location.pathname;
-		const item = navigationsLinks.find((navigationsLink) => navigationsLink.path === pathname);
+		const item = ROUTE_NAVIGATIONS.find((navigationsLink) => navigationsLink.path === pathname);
 		if (item) {
 			if (item.path === '/') {
 				isBadgeCollapse = scrollTop > 4;

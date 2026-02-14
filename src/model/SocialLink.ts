@@ -4,7 +4,7 @@ export interface SocialLinkData {
 	href: string;
 }
 
-export class SocialLink {
+export class SocialLinkModel {
 	readonly title: string;
 	readonly icon: string;
 	readonly href: string;

@@ -1,15 +1,15 @@
-export interface FursonRefImageData {
+export interface FursonaRefImageData {
 	small?: string;
 	full: string;
 	author: string;
 }
 
-export class FursonaRefImage {
+export class FursonaRefImageModel {
 	small?: string;
 	full: string;
 	author: string;
 
-	constructor(data: FursonRefImageData) {
+	constructor(data: FursonaRefImageData) {
 		this.small = data.small;
 		this.full = data.full;
 		this.author = data.author;

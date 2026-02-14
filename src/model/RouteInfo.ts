@@ -1,4 +1,4 @@
-export default class RouteInfo {
+export class RouteInfoModel {
 	public readonly title: string;
 	public readonly path: string;
 
@@ -11,16 +11,16 @@ export default class RouteInfo {
 	}
 }
 
-export const HOME = new RouteInfo('Home', '/', 'Rory Reference Website');
-export const GENERAL = new RouteInfo('General', '/general', 'Rory - General');
-export const REFERENCE = new RouteInfo('Reference', '/reference', 'Rory - Reference');
-export const CLOTHING = new RouteInfo('Clothing (Beta)', '/clothing', 'Rory - Clothing');
-export const ABOUT_ME = new RouteInfo('About Me (Beta)', '/about', 'Rory - About Me');
+export const ROUTE_HOME = new RouteInfoModel('Home', '/', 'Rory Reference Website');
+export const ROUTE_GENERAL = new RouteInfoModel('General', '/general', 'Rory - General');
+export const ROUTE_REFERENCE = new RouteInfoModel('Reference', '/reference', 'Rory - Reference');
+export const ROUTE_CLOTHING = new RouteInfoModel('Clothing (Beta)', '/clothing', 'Rory - Clothing');
+export const ROUTE_ABOUT_ME = new RouteInfoModel('About Me (Beta)', '/about', 'Rory - About Me');
 
-export const list = [
-	HOME,
-	GENERAL,
-	REFERENCE,
+export const ROUTE_NAVIGATIONS: RouteInfoModel[] = [
+	ROUTE_HOME,
+	ROUTE_GENERAL,
+	ROUTE_REFERENCE,
 	// CLOTHING,
 	// ABOUT_ME,
 ];
